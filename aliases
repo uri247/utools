@@ -1,0 +1,93 @@
+
+vi   =vim $*
+als  =vim c:\usr\utools\aliases && doskey /macrofile=c:\usr\utools\aliases
+nals =start /wait notepad c:\usr\utools\aliases && doskey /macrofile=c:\usr\utools\aliases
+showals=doskey /macros | findstr "^$1="
+vihosts=vim C:\Windows\System32\drivers\etc\hosts
+
+ll   =dir $*
+ls   =dir $*
+
+g    =findstr $*
+
+keng =taskkill /im WatchDoxWatchDog.exe /f || taskkill /im WatchDoxEngine.exe /f
+koff =taskkill /f /im outlook.exe & taskkill /f /im winword.exe
+kie  =taskkill /f /im iexplore.exe
+tl   =tasklist $*
+tk   =taskkill $*
+
+wbg  ="%ProgramFiles%\Debugging Tools for Windows (%archname%)\windbg.exe" $*
+wbgww="%ProgramFiles%\Debugging Tools for Windows (%archname%)\windbg.exe" "%ProgramFiles(x86)%\Microsoft Office\Office14\WINWORD.EXE" $*
+wbgxl="%ProgramFiles%\Debugging Tools for Windows (%archname%)\windbg.exe" "%ProgramFiles(x86)%\Microsoft Office\Office14\EXCEL.EXE" $*
+wbgol="%ProgramFiles%\Debugging Tools for Windows (%archname%)\windbg.exe" "%ProgramFiles(x86)%\Microsoft Office\Office14\OUTLOOK.EXE" $*
+wbgie="%ProgramFiles%\Debugging Tools for Windows (%archname%)\windbg.exe" "%ProgramFiles%\Internet Explorer\iexplore.exe" $*
+wbgiet="%ProgramFiles%\Debugging Tools for Windows (%archname%)\windbg.exe" "%ProgramFiles%\Internet Explorer\iexplore.exe" http://localhost:5000/web/treewalk.html
+dlsym=symchk /s srv*c:\local\symbols*http://msdl.microsoft.com/download/symbols /op /oi /od /ob /os $*
+apps="c:\Program Files\Google\google_appengine\dev_appserver.py" $*
+
+ssv=c:\usr\SSView\SSView.exe $*
+eclipse=C:\usr\eclipse\eclipse.exe
+ga=c:\uri\cut\PerlGames\AllKind\getaspect.pl
+pad=notepad $*
+npp="C:\Program Files\Notepad++\notepad++.exe" $*
+scp="C:\Program Files\PuTTY\pscp.exe" $*
+puta="C:\Program Files\PuTTY\putty.exe" $*
+compmgmt=compmgmt.msc
+sysdm=sysdm.cpl
+openvpn="C:\Program Files\OpenVPN\bin\openvpn-gui-1.0.3.exe"
+hb="c:\Program Files\Handbrake\Handbrake.exe"
+wdu=c:\usr\wtools\du $*
+chrome=%localappdata%\Google\Chrome\Application\chrome.exe
+
+tsvnlog=TortoiseProc /command:log /path:.
+gg="C:\Program Files\Git\bin\wish.exe" "C:\Program Files\Git\libexec\git-core\git-gui"
+
+bash=C:\usr\MinGW\msys\1.0\bin\bash.exe --login -i
+
+
+glz  ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://radio.glz.co.il:8000/galatz
+gglz ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://radio.glz.co.il:8000/galgalatz
+kolm ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open mms://s4awm.castup.net/990310008-52.wmv
+88fm ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open mms://s4bwm.castup.net/990310006-52.wmv
+gimel="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open mms://s4awm.castup.net/990310004-52.wmv
+99fm ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open mms://194.90.203.111/99fm
+wqxr ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://wnyc-wqxr-ice.streamguys.com:80/wqxr
+wfmu ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://stream0.wfmu.org/freeform-128k.mp3
+
+
+
+ie   ="%ProgramFiles(x86)%\Internet Explorer\iexplore.exe" $*
+ol   ="%ProgramFiles(x86)%\Microsoft Office\Office14\OUTLOOK.EXE" $*
+ww   ="%ProgramFiles(x86)%\Microsoft Office\Office14\WINWORD.EXE" $*
+xl   ="%ProgramFiles(x86)%\Microsoft Office\Office14\EXCEL.EXE" $*
+pp   ="%ProgramFiles(x86)%\Microsoft Office\Office14\POWERPNT.EXE" $*
+
+
+
+cd    =pushd $*
+e     =popd $*
+r     =pushd \
+wirm  =pushd c:\confidela\SDClient\WindowsPlugin\$*
+adata =pushd %APPDATA%\$*
+ladata=pushd %LOCALAPPDATA%\$*
+h     =pushd %UserProfile%
+home  =pushd %UserProfile%
+dl    =pushd %UserProfile%\downloads
+myd   =pushd %UserProfile%\Documents
+dbox  =pushd %UserProfile%\dropbox
+wdad  =pushd %APPDATA%\WatchDox
+rmsad =pushd %LOCALAPPDATA%\Microsoft\DRM
+ag    =pushd c:\uri\cut\PerlGames\Amazon
+
+cdn   =pushd c:\t2k\lms\cdn
+tto   =pushd c:\t2k\lms\OfficeAutomation
+
+sdkdir=pushd "%ProgramFiles%\Microsoft SDKs\Windows\v7.1\$*"
+vcdir =pushd "%ProgramFiles%\Microsoft Visual Studio 10.0\VC\$*"
+
+
+
+
+fixroute =route add 172.16.24.0 mask 255.255.248.0 172.16.0.22 IF 39
+
+
