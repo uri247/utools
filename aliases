@@ -17,12 +17,12 @@ kitu =taskkill /f /im itunes.exe
 tl   =tasklist $*
 tk   =taskkill $*
 
-wbg  ="%ProgramFiles%\Debugging Tools for Windows (%archname%)\windbg.exe" $*
+wbg  =windbg.exe $*
 wbgww=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\WINWORD.EXE" $*
 wbgxl=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\EXCEL.EXE" $*
 wbgol="%ProgramFiles%\Debugging Tools for Windows (%archname%)\windbg.exe" "%ProgramFiles(x86)%\Microsoft Office\Office14\OUTLOOK.EXE" $*
-wbgie="%ProgramFiles%\Debugging Tools for Windows (%archname%)\windbg.exe" "%ProgramFiles%\Internet Explorer\iexplore.exe" $*
-wbgiet="%ProgramFiles%\Debugging Tools for Windows (%archname%)\windbg.exe" "%ProgramFiles%\Internet Explorer\iexplore.exe" http://localhost:5000/web/treewalk.html
+wbgie=windbg.exe "%ProgramFiles%\Internet Explorer\iexplore.exe" $*
+wbgiet=windbg.exe "%ProgramFiles%\Internet Explorer\iexplore.exe" http://localhost:5000/web/treewalk.html
 dlsym=symchk /s srv*c:\local\symbols*http://msdl.microsoft.com/download/symbols /op /oi /od /ob /os $*
 apps="c:\Program Files\Google\google_appengine\dev_appserver.py" $*
 splitpath=path | perl -ne "{print join qq(\n), split ';'}"
@@ -31,18 +31,19 @@ ssv=c:\usr\SSView\SSView.exe $*
 eclipse=C:\usr\eclipse\eclipse.exe
 ga=c:\uri\cut\PerlGames\AllKind\getaspect.pl
 pad=notepad $*
-npp="C:\Program Files\Notepad++\notepad++.exe" $*
+npp="%ProgramFiles(x86)%\Notepad++\notepad++.exe" $*
 scp="C:\Program Files\PuTTY\pscp.exe" $*
 puta="C:\Program Files\PuTTY\putty.exe" $*
 compmgmt=compmgmt.msc
 sysdm=sysdm.cpl
 openvpn="C:\Program Files\OpenVPN\bin\openvpn-gui-1.0.3.exe"
-hb="c:\Program Files\Handbrake\Handbrake.exe"
+hb="%ProgramFiles(x86)%\Handbrake\Handbrake.exe"
 wdu=c:\usr\wtools\du $*
 chrome=%localappdata%\Google\Chrome\Application\chrome.exe
+trnsmgr="C:\Windows\Downloaded Program Files\TransferMgr.exe"
 
 tsvnlog=TortoiseProc /command:log /path:.
-gg="C:\Program Files\Git\bin\wish.exe" "C:\Program Files\Git\libexec\git-core\git-gui"
+gg="%ProgramFiles(x86)%\Git\bin\wish.exe" "%ProgramFiles(x86)%\Git\libexec\git-core\git-gui"
 
 bash=C:\usr\MinGW\msys\1.0\bin\bash.exe --login -i
 
@@ -55,6 +56,7 @@ gimel="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open mms:/
 99fm ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open mms://194.90.203.111/99fm
 wqxr ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://wnyc-wqxr-ice.streamguys.com:80/wqxr
 wfmu ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://stream0.wfmu.org/freeform-128k.mp3
+kexp ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open mms://media-wm.cac.washington.edu/KEXP-Live
 
 
 
@@ -76,6 +78,7 @@ upppp =pushd ..\..\..\..\$*
 wirm  =pushd c:\confidela\SDClient\WindowsPlugin\$*
 adata =pushd %APPDATA%\$*
 ladata=pushd %LOCALAPPDATA%\$*
+wdata =pushd %APPDATA%\WatchDox
 h     =pushd %UserProfile%
 home  =pushd %UserProfile%
 dl    =pushd %UserProfile%\downloads
@@ -85,18 +88,15 @@ wdad  =pushd %APPDATA%\WatchDox
 rmsad =pushd %LOCALAPPDATA%\Microsoft\DRM
 ag    =pushd c:\uri\cut\PerlGames\Amazon
 rms   =pushd c:\uri\rms\RmsCrypto\$*
+wdd   =pushd c:\watchdox\3.4\WindowsPlugin\Debug\$*
 
 cdn   =pushd c:\t2k\lms\cdn
 tto   =pushd c:\t2k\lms\OfficeAutomation
 
 sdkdir=pushd "%ProgramFiles%\Microsoft SDKs\Windows\v7.1\$*"
-vcdir =pushd "%ProgramFiles%\Microsoft Visual Studio 10.0\VC\$*"
-
 goodguid=uuidgen -n50000 $* | perl -ne "print if /^(.)\1\1\1/;"
 
-
-
+vcdir =pushd "%ProgramFiles(x86)%\Microsoft Visual Studio 10.0\VC\$*"
 
 fixroute =route add 172.16.24.0 mask 255.255.248.0 172.16.0.22 IF 39
-
-
+fixroute-dt =route add 172.16.24.0 mask 255.255.248.0 172.16.0.22 IF 14
