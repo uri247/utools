@@ -10,7 +10,7 @@ ls   =dir $*
 
 g    =findstr $*
 
-keng =taskkill /im WatchDoxWatchDog.exe /f || taskkill /im WatchDoxEngine.exe /f
+keng =for %a in (WatchDoxWatchDog WatchDoxEngine WDServiceStarter_32) do @taskkill /f /im %a.exe
 koff =taskkill /f /im outlook.exe & taskkill /f /im winword.exe
 kie  =taskkill /f /im iexplore.exe
 kitu =taskkill /f /im itunes.exe
@@ -91,6 +91,8 @@ tto   =pushd c:\t2k\lms\OfficeAutomation
 
 sdkdir=pushd "%ProgramFiles%\Microsoft SDKs\Windows\v7.1\$*"
 vcdir =pushd "%ProgramFiles%\Microsoft Visual Studio 10.0\VC\$*"
+
+goodguid=uuidgen -n50000 $* | perl -ne "print if /^(.)\1\1\1/;"
 
 
 
