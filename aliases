@@ -96,5 +96,6 @@ vcdir =pushd "%ProgramFiles%\Microsoft Visual Studio 10.0\VC\$*"
 
 
 fixroute =route add 172.16.24.0 mask 255.255.248.0 172.16.0.22 IF 39
+fixroute-dt =route add 172.16.24.0 mask 255.255.248.0 172.16.0.22 IF 14
 
 
