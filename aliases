@@ -89,6 +89,7 @@ rmsad =pushd %LOCALAPPDATA%\Microsoft\DRM
 ag    =pushd c:\uri\cut\PerlGames\Amazon
 rms   =pushd c:\uri\rms\RmsCrypto\$*
 wdd   =pushd c:\watchdox\3.4\WindowsPlugin\Debug\$*
+pyg   =pushd c:\uri\workspace\helloPydev\src\root
 
 cdn   =pushd c:\t2k\lms\cdn
 tto   =pushd c:\t2k\lms\OfficeAutomation
