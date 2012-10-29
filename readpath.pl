@@ -1,5 +1,4 @@
 
-
 @_ = `reg query "HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment" /v Path`;
 $_ = @_[2];
 s/^ *//;
