@@ -88,6 +88,7 @@ skyd  =pushd %UserProfile%\SkyDrive\$*
 googd =pushd "%UserProfile%\GoogleDrive\$*"
 wdad  =pushd %APPDATA%\WatchDox
 rmsad =pushd %LOCALAPPDATA%\Microsoft\DRM
+cut   =pushd c:\uri\cut
 ag    =pushd c:\uri\cut\PerlGames\Amazon
 rms   =pushd c:\uri\rms\RmsCrypto\$*
 wdt   =pushd c:\watchdox\trunk
