@@ -92,6 +92,7 @@ cut   =pushd c:\uri\cut
 ag    =pushd c:\uri\cut\PerlGames\Amazon
 rms   =pushd c:\uri\rms\RmsCrypto\$*
 wdt   =pushd c:\watchdox\trunk
+wdr   =pushd c:\watchdox\trunk\WindowsPlugin
 wdd   =pushd c:\watchdox\trunk\WindowsPlugin\Debug\$*
 pyg   =pushd c:\uri\workspace\helloPydev\src\root
 
