@@ -107,3 +107,9 @@ vcdir =pushd "%ProgramFiles(x86)%\Microsoft Visual Studio 10.0\VC\$*"
 fixroute    =route add 172.16.24.0 mask 255.255.248.0 172.16.0.22 IF 39
 fixroute-dt =route add 172.16.24.0 mask 255.255.248.0 172.16.0.22 IF 14
 fixroute-u2 =route add 172.16.24.0 mask 255.255.248.0 172.16.0.22 IF 24
+
+pedir =perl -e "{for (<*>) {print qq($_\n);} }"
+pefwinfo=dir /s /b info.txt | perl -ne "/(?<=\\)[^\\]*(?=\\info.txt)/; print qq($&\n)"
+
+
+
