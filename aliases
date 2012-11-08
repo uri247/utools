@@ -8,7 +8,8 @@ vihosts=vim C:\Windows\System32\drivers\etc\hosts
 ll   =dir $*
 ls   =dir $*
 
-g    =findstr $*
+gnp  =findstr $*
+g    =perl -ne "print qq($.: $_) if /$1/" $2
 
 keng =for %a in (WatchDoxWatchDog WatchDoxEngine WDServiceStarter_32) do @taskkill /f /im %a.exe
 koff =taskkill /f /im outlook.exe & taskkill /f /im winword.exe
