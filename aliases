@@ -39,13 +39,15 @@ sysdm=sysdm.cpl
 openvpn="C:\Program Files\OpenVPN\bin\openvpn-gui-1.0.3.exe"
 hb="%ProgramFiles(x86)%\Handbrake\Handbrake.exe"
 wdu=c:\usr\wtools\du $*
-chrome=%localappdata%\Google\Chrome\Application\chrome.exe
+chrome="%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"
 trnsmgr="C:\Windows\Downloaded Program Files\TransferMgr.exe"
 
 tsvnlog=TortoiseProc /command:log /path:.
 gg="%ProgramFiles(x86)%\Git\bin\wish.exe" "%ProgramFiles(x86)%\Git\libexec\git-core\git-gui"
 
 bash=C:\usr\MinGW\msys\1.0\bin\bash.exe --login -i
+
+luchrome=runas /u:%COMPUTERNAME%\localuri "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"
 
 
 glz  ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://radio.glz.co.il:8000/galatz
