@@ -13,7 +13,7 @@ ls   =dir $*
 #grep =c:\usr\MinGW\msys\1.0\bin\grep.exe $*
 
 
-keng =for %a in (WatchDoxWatchDog WatchDoxEngine WDServiceStarter_32) do @taskkill /f /im %a.exe
+keng =for %a in (WatchDoxWatchDog WatchDoxEngine WDServiceStarter_32 WDServiceStarter_64) do @taskkill /f /im %a.exe
 koff =taskkill /f /im outlook.exe & taskkill /f /im winword.exe
 kie  =taskkill /f /im iexplore.exe
 kitu =taskkill /f /im itunes.exe
@@ -28,6 +28,7 @@ wbgie=windbg.exe "%ProgramFiles%\Internet Explorer\iexplore.exe" $*
 wbgiet=windbg.exe "%ProgramFiles%\Internet Explorer\iexplore.exe" http://localhost:5000/web/treewalk.html
 apps="c:\Program Files\Google\google_appengine\dev_appserver.py" $*
 splitpath=path | perl -ne "{print join qq(\n), split ';'}"
+dlog=c:\watchdox\trunk\WindowsPlugin\Debug\Log.Decoder.exe $*
 
 ssv=c:\usr\SSView\SSView.exe $*
 eclipse=C:\usr\eclipse\eclipse.exe
@@ -83,8 +84,8 @@ wirm  =pushd c:\confidela\SDClient\WindowsPlugin\$*
 adata =pushd %APPDATA%\$*
 ldata =pushd %LOCALAPPDATA%\$*
 wdata =pushd %APPDATA%\WatchDox
-h     =pushd %UserProfile%
-home  =pushd %UserProfile%
+h     =pushd %UserProfile%\$*
+home  =pushd %UserProfile%\$*
 dl    =pushd %UserProfile%\downloads
 myd   =pushd %UserProfile%\Documents
 dbox  =pushd %UserProfile%\dropbox\$*
@@ -96,6 +97,7 @@ cut   =pushd c:\uri\cut
 ag    =pushd c:\uri\cut\PerlGames\Amazon
 rms   =pushd c:\uri\rms\RmsCrypto\$*
 wdt   =pushd c:\watchdox\trunk
+36    =pushd c:\watchdox\3.6.0\WindowsPlugin
 wdr   =pushd c:\watchdox\trunk\WindowsPlugin
 wdd   =pushd c:\watchdox\trunk\WindowsPlugin\Debug\$*
 pyg   =pushd c:\uri\workspace\helloPydev\src\root
