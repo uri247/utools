@@ -8,9 +8,12 @@ vihosts=vim C:\Windows\System32\drivers\etc\hosts
 ll   =dir $*
 ls   =dir $*
 
-g    =findstr $*
+#gnp  =findstr $*
+pg    =perl -ne "print qq($.: $_) if /$1/" $2
+#grep =c:\usr\MinGW\msys\1.0\bin\grep.exe $*
 
-keng =for %a in (WatchDoxWatchDog WatchDoxEngine WDServiceStarter_32) do @taskkill /f /im %a.exe
+
+keng =for %a in (WatchDoxWatchDog WatchDoxEngine WDServiceStarter_32 WDServiceStarter_64) do @taskkill /f /im %a.exe
 koff =taskkill /f /im outlook.exe & taskkill /f /im winword.exe
 kie  =taskkill /f /im iexplore.exe
 kitu =taskkill /f /im itunes.exe
@@ -25,6 +28,10 @@ wbgie=windbg.exe "%ProgramFiles%\Internet Explorer\iexplore.exe" $*
 wbgiet=windbg.exe "%ProgramFiles%\Internet Explorer\iexplore.exe" http://localhost:5000/web/treewalk.html
 apps="c:\Program Files\Google\google_appengine\dev_appserver.py" $*
 splitpath=path | perl -ne "{print join qq(\n), split ';'}"
+dlog=c:\watchdox\trunk\WindowsPlugin\Debug\Log.Decoder.exe $* -s
+iconv=c:\usr\MinGW\bin\iconv.exe $*
+uni2utf=c:\usr\MinGW\bin\iconv.exe -f unicodelittle -t utf-8 $*
+npp=%ProgramFiles(x86)%\Notepad++\notepad++.exe $*
 
 ssv=c:\usr\SSView\SSView.exe $*
 eclipse=C:\usr\eclipse\eclipse.exe
@@ -38,13 +45,15 @@ sysdm=sysdm.cpl
 openvpn="C:\Program Files\OpenVPN\bin\openvpn-gui-1.0.3.exe"
 hb="%ProgramFiles(x86)%\Handbrake\Handbrake.exe"
 wdu=c:\usr\wtools\du $*
-chrome=%localappdata%\Google\Chrome\Application\chrome.exe
+chrome="%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"
 trnsmgr="C:\Windows\Downloaded Program Files\TransferMgr.exe"
 
 tsvnlog=TortoiseProc /command:log /path:.
 gg="%ProgramFiles(x86)%\Git\bin\wish.exe" "%ProgramFiles(x86)%\Git\libexec\git-core\git-gui"
 
 bash=C:\usr\MinGW\msys\1.0\bin\bash.exe --login -i
+
+luchrome=runas /u:%COMPUTERNAME%\localuri "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"
 
 
 glz  ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://radio.glz.co.il:8000/galatz
@@ -78,8 +87,8 @@ wirm  =pushd c:\confidela\SDClient\WindowsPlugin\$*
 adata =pushd %APPDATA%\$*
 ldata =pushd %LOCALAPPDATA%\$*
 wdata =pushd %APPDATA%\WatchDox
-h     =pushd %UserProfile%
-home  =pushd %UserProfile%
+h     =pushd %UserProfile%\$*
+home  =pushd %UserProfile%\$*
 dl    =pushd %UserProfile%\downloads
 myd   =pushd %UserProfile%\Documents
 dbox  =pushd %UserProfile%\dropbox\$*
@@ -91,6 +100,8 @@ cut   =pushd c:\uri\cut
 ag    =pushd c:\uri\cut\PerlGames\Amazon
 rms   =pushd c:\uri\rms\RmsCrypto\$*
 wdt   =pushd c:\watchdox\trunk
+36    =pushd c:\watchdox\3.6.1\WindowsPlugin
+wdr   =pushd c:\watchdox\trunk\WindowsPlugin
 wdd   =pushd c:\watchdox\trunk\WindowsPlugin\Debug\$*
 pyg   =pushd c:\uri\workspace\helloPydev\src\root
 utoo  =pushd c:\usr\utools
@@ -106,3 +117,9 @@ vcdir =pushd "%ProgramFiles(x86)%\Microsoft Visual Studio 10.0\VC\$*"
 fixroute    =route add 172.16.24.0 mask 255.255.248.0 172.16.0.22 IF 39
 fixroute-dt =route add 172.16.24.0 mask 255.255.248.0 172.16.0.22 IF 14
 fixroute-u2 =route add 172.16.24.0 mask 255.255.248.0 172.16.0.22 IF 24
+
+pedir =perl -e "{for (<*>) {print qq($_\n);} }"
+pefwinfo=dir /s /b info.txt | perl -ne "/(?<=\\)[^\\]*(?=\\info.txt)/; print qq($&\n)"
+
+
+
