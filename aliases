@@ -9,7 +9,7 @@ ll   =dir $*
 ls   =dir $*
 
 #gnp  =findstr $*
-#g    =perl -ne "print qq($.: $_) if /$1/" $2
+pg    =perl -ne "print qq($.: $_) if /$1/" $2
 #grep =c:\usr\MinGW\msys\1.0\bin\grep.exe $*
 
 
@@ -28,7 +28,10 @@ wbgie=windbg.exe "%ProgramFiles%\Internet Explorer\iexplore.exe" $*
 wbgiet=windbg.exe "%ProgramFiles%\Internet Explorer\iexplore.exe" http://localhost:5000/web/treewalk.html
 apps="c:\Program Files\Google\google_appengine\dev_appserver.py" $*
 splitpath=path | perl -ne "{print join qq(\n), split ';'}"
-dlog=c:\watchdox\trunk\WindowsPlugin\Debug\Log.Decoder.exe $*
+dlog=c:\watchdox\trunk\WindowsPlugin\Debug\Log.Decoder.exe $* -s
+iconv=c:\usr\MinGW\bin\iconv.exe $*
+uni2utf=c:\usr\MinGW\bin\iconv.exe -f unicodelittle -t utf-8 $*
+npp=%ProgramFiles(x86)%\Notepad++\notepad++.exe $*
 
 ssv=c:\usr\SSView\SSView.exe $*
 eclipse=C:\usr\eclipse\eclipse.exe
@@ -97,7 +100,7 @@ cut   =pushd c:\uri\cut
 ag    =pushd c:\uri\cut\PerlGames\Amazon
 rms   =pushd c:\uri\rms\RmsCrypto\$*
 wdt   =pushd c:\watchdox\trunk
-36    =pushd c:\watchdox\3.6.0\WindowsPlugin
+36    =pushd c:\watchdox\3.6.1\WindowsPlugin
 wdr   =pushd c:\watchdox\trunk\WindowsPlugin
 wdd   =pushd c:\watchdox\trunk\WindowsPlugin\Debug\$*
 pyg   =pushd c:\uri\workspace\helloPydev\src\root
