@@ -8,7 +8,7 @@ vihosts=vim C:\Windows\System32\drivers\etc\hosts
 ll   =dir $*
 ls   =dir $*
 
-#gnp  =findstr $*
+g     =findstr $*
 pg    =perl -ne "print qq($.: $_) if /$1/" $2
 #grep =c:\usr\MinGW\msys\1.0\bin\grep.exe $*
 
@@ -31,7 +31,8 @@ splitpath=path | perl -ne "{print join qq(\n), split ';'}"
 dlog=c:\watchdox\trunk\WindowsPlugin\Debug\Log.Decoder.exe $* -s
 iconv=c:\usr\MinGW\bin\iconv.exe $*
 uni2utf=c:\usr\MinGW\bin\iconv.exe -f unicodelittle -t utf-8 $*
-npp=%ProgramFiles(x86)%\Notepad++\notepad++.exe $*
+npp="%ProgramFiles(x86)%\Notepad++\notepad++.exe" $*
+neo="%ProgramFiles(x86)%\HHD Software\Hex Editor Neo\HexFrame.exe" $*
 
 ssv=c:\usr\SSView\SSView.exe $*
 eclipse=C:\usr\eclipse\eclipse.exe
