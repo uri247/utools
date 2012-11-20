@@ -11,6 +11,7 @@ ls   =dir $*
 #gnp  =findstr $*
 #g    =perl -ne "print qq($.: $_) if /$1/" $2
 #grep =c:\usr\MinGW\msys\1.0\bin\grep.exe $*
+g     =findstr $*
 
 
 keng =for %a in (WatchDoxWatchDog WatchDoxEngine WDServiceStarter_32) do @taskkill /f /im %a.exe
@@ -28,6 +29,7 @@ wbgie=windbg.exe "%ProgramFiles%\Internet Explorer\iexplore.exe" $*
 wbgiet=windbg.exe "%ProgramFiles%\Internet Explorer\iexplore.exe" http://localhost:5000/web/treewalk.html
 apps="c:\Program Files\Google\google_appengine\dev_appserver.py" $*
 splitpath=path | perl -ne "{print join qq(\n), split ';'}"
+dlog =c:\watchdox\trunk\WindowsPlugin\Debug\Log.Decoder.exe $*
 
 ssv=c:\usr\SSView\SSView.exe $*
 eclipse=C:\usr\eclipse\eclipse.exe
