@@ -1,5 +1,4 @@
 if .%1 == . goto :usage
-
 if .%1 == .-p goto :process
 
 :image

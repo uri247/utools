@@ -32,7 +32,8 @@ splitpath=path | perl -ne "{print join qq(\n), split ';'}"
 dlog=c:\watchdox\trunk\WindowsPlugin\Debug\Log.Decoder.exe $* -s
 iconv=c:\usr\MinGW\bin\iconv.exe $*
 uni2utf=c:\usr\MinGW\bin\iconv.exe -f unicodelittle -t utf-8 $*
-npp="%ProgramFiles(x86)%\Notepad++\notepad++.exe" $*
+npp=%ProgramFiles(x86)%\Notepad++\notepad++.exe $*
+vcv="%VS110COMNTOOLS%\..\..\vc\vcvarsall.bat"
 neo="%ProgramFiles(x86)%\HHD Software\Hex Editor Neo\HexFrame.exe" $*
 
 ssv=c:\usr\SSView\SSView.exe $*
@@ -115,11 +116,10 @@ tto   =pushd c:\t2k\lms\OfficeAutomation
 sdkdir=pushd "%ProgramFiles%\Microsoft SDKs\Windows\v7.1\$*"
 goodguid=uuidgen -n50000 $* | perl -ne "print if /^(.)\1\1\1/;"
 
-vcdir =pushd "%ProgramFiles(x86)%\Microsoft Visual Studio 10.0\VC\$*"
+vcdir =pushd "%ProgramFiles(x86)%\Microsoft Visual Studio *.0\VC\$*"
 
 fixroute    =route add 172.16.24.0 mask 255.255.248.0 172.16.0.22 IF 39
-fixroute-dt =route add 172.16.24.0 mask 255.255.248.0 172.16.0.22 IF 14
-fixroute-u2 =route add 172.16.24.0 mask 255.255.248.0 172.16.0.22 IF 24
+fixrout     =route add 172.16.24.0 mask 255.255.248.0 172.16.0.22 IF $*
 
 pedir =perl -e "{for (<*>) {print qq($_\n);} }"
 pefwinfo=dir /s /b info.txt | perl -ne "/(?<=\\)[^\\]*(?=\\info.txt)/; print qq($&\n)"
