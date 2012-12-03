@@ -1,4 +1,3 @@
-
 vi   =vim $*
 als  =vim c:\usr\utools\aliases && doskey /macrofile=c:\usr\utools\aliases
 nals =start /wait notepad c:\usr\utools\aliases && doskey /macrofile=c:\usr\utools\aliases
@@ -28,6 +27,7 @@ wbgie=windbg.exe "%ProgramFiles%\Internet Explorer\iexplore.exe" $*
 wbgiet=windbg.exe "%ProgramFiles%\Internet Explorer\iexplore.exe" http://localhost:5000/web/treewalk.html
 apps="c:\Program Files\Google\google_appengine\dev_appserver.py" $*
 splitpath=path | perl -ne "{print join qq(\n), split ';'}"
+dellog=del %APPDATA%\WatchDox\*.log && del %APPDATA%\WatchDox\*.ldecoded
 dlog=c:\watchdox\trunk\WindowsPlugin\Debug\Log.Decoder.exe $* -s
 iconv=c:\usr\MinGW\bin\iconv.exe $*
 uni2utf=c:\usr\MinGW\bin\iconv.exe -f unicodelittle -t utf-8 $*
@@ -96,15 +96,12 @@ myd   =pushd %UserProfile%\Documents
 dbox  =pushd %UserProfile%\dropbox\$*
 skyd  =pushd %UserProfile%\SkyDrive\$*
 googd =pushd "%UserProfile%\GoogleDrive\$*"
-wdad  =pushd %APPDATA%\WatchDox
 rmsad =pushd %LOCALAPPDATA%\Microsoft\DRM
 cut   =pushd c:\uri\cut
 ag    =pushd c:\uri\cut\PerlGames\Amazon
 rms   =pushd c:\uri\rms\RmsCrypto\$*
-wdt   =pushd c:\watchdox\trunk
-36    =pushd c:\watchdox\3.6.1\WindowsPlugin
-wdr   =pushd c:\watchdox\trunk\WindowsPlugin
-wdd   =pushd c:\watchdox\trunk\WindowsPlugin\Debug\$*
+wdt   =pushd c:\watchdox\trunk\WindowsPlugin
+scl   =pushd c:\watchdox\secclip\WindowsPlugin
 pyg   =pushd c:\uri\workspace\helloPydev\src\root
 utoo  =pushd c:\usr\utools
 
@@ -121,6 +118,5 @@ fixrout     =route add 172.16.24.0 mask 255.255.248.0 172.16.0.22 IF $*
 
 pedir =perl -e "{for (<*>) {print qq($_\n);} }"
 pefwinfo=dir /s /b info.txt | perl -ne "/(?<=\\)[^\\]*(?=\\info.txt)/; print qq($&\n)"
-
 
 
