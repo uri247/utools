@@ -10,6 +10,7 @@ ls   =dir $*
 g     =findstr $*
 pg    =perl -ne "print qq($.: $_) if /$1/" $2
 #grep =c:\usr\MinGW\msys\1.0\bin\grep.exe $*
+g     =findstr $*
 
 
 keng =for %a in (WatchDoxWatchDog WatchDoxEngine WDServiceStarter_32 WDServiceStarter_64) do @taskkill /f /im %a.exe
@@ -68,6 +69,7 @@ gimel="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open mms:/
 wqxr ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://wnyc-wqxr-ice.streamguys.com:80/wqxr
 wfmu ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://stream0.wfmu.org/freeform-128k.mp3
 kexp ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open mms://media-wm.cac.washington.edu/KEXP-Live
+vop  ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://uk2-vn.mixstream.net:8004
 
 
 
