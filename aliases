@@ -69,7 +69,7 @@ gimel="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open mms:/
 wqxr ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://wnyc-wqxr-ice.streamguys.com:80/wqxr
 wfmu ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://stream0.wfmu.org/freeform-128k.mp3
 kexp ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open mms://media-wm.cac.washington.edu/KEXP-Live
-vop  ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://uk2-vn.mixstream.net:8004
+tvop ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://uk2-vn.mixstream.net:8004
 
 
 
