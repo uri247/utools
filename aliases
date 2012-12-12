@@ -21,13 +21,16 @@ tl   =tasklist $*
 tk   =taskkill $*
 
 wbg  =windbg.exe $*
+wbgol=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\OUTLOOK.EXE" $*
 wbgww=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\WINWORD.EXE" $*
 wbgxl=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\EXCEL.EXE" $*
-wbgol="%ProgramFiles%\Debugging Tools for Windows (%archname%)\windbg.exe" "%ProgramFiles(x86)%\Microsoft Office\Office14\OUTLOOK.EXE" $*
-wbgie=windbg.exe "%ProgramFiles%\Internet Explorer\iexplore.exe" $*
-wbgiet=windbg.exe "%ProgramFiles%\Internet Explorer\iexplore.exe" http://localhost:5000/web/treewalk.html
-wbgrdr=windbg "%ProgramFiles(x86)%\Adobe\Reader 11.0\Reader\AcroRd32.exe"
+wbgpp=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\POWERPNT.EXE" $*
+wbgww12=windbg "%ProgramFiles(x86)%\Microsoft Office\Office12\WINWORD.EXE" $*
+wbgxl12=windbg "%ProgramFiles(x86)%\Microsoft Office\Office12\EXCEL.EXE" $*
+wbgpp12=windbg "%ProgramFiles(x86)%\Microsoft Office\Office12\POWERPNT.EXE" $*
 
+wbgie=windbg "%ProgramFiles%\Internet Explorer\iexplore.exe" $*
+wbgrdr=windbg "%ProgramFiles(x86)%\Adobe\Reader 11.0\Reader\AcroRd32.exe"
 
 apps="c:\Program Files\Google\google_appengine\dev_appserver.py" $*
 splitpath=path | perl -ne "{print join qq(\n), split ';'}"
@@ -72,7 +75,7 @@ gimel="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open mms:/
 wqxr ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://wnyc-wqxr-ice.streamguys.com:80/wqxr
 wfmu ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://stream0.wfmu.org/freeform-128k.mp3
 kexp ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open mms://media-wm.cac.washington.edu/KEXP-Live
-vop  ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://uk2-vn.mixstream.net:8004
+tvop ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://uk2-vn.mixstream.net:8004
 
 
 
@@ -81,6 +84,9 @@ ol   ="%ProgramFiles(x86)%\Microsoft Office\Office14\OUTLOOK.EXE" $*
 ww   ="%ProgramFiles(x86)%\Microsoft Office\Office14\WINWORD.EXE" $*
 xl   ="%ProgramFiles(x86)%\Microsoft Office\Office14\EXCEL.EXE" $*
 pp   ="%ProgramFiles(x86)%\Microsoft Office\Office14\POWERPNT.EXE" $*
+ww12 ="%ProgramFiles(x86)%\Microsoft Office\Office12\WINWORD.EXE" $*
+xl12 ="%ProgramFiles(x86)%\Microsoft Office\Office12\EXCEL.EXE" $*
+pp12 ="%ProgramFiles(x86)%\Microsoft Office\Office12\POWERPNT.EXE" $*
 
 
 
