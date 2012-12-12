@@ -26,6 +26,9 @@ wbgxl=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\EXCEL.EXE" $*
 wbgol="%ProgramFiles%\Debugging Tools for Windows (%archname%)\windbg.exe" "%ProgramFiles(x86)%\Microsoft Office\Office14\OUTLOOK.EXE" $*
 wbgie=windbg.exe "%ProgramFiles%\Internet Explorer\iexplore.exe" $*
 wbgiet=windbg.exe "%ProgramFiles%\Internet Explorer\iexplore.exe" http://localhost:5000/web/treewalk.html
+wbgrdr=windbg "%ProgramFiles(x86)%\Adobe\Reader 11.0\Reader\AcroRd32.exe"
+
+
 apps="c:\Program Files\Google\google_appengine\dev_appserver.py" $*
 splitpath=path | perl -ne "{print join qq(\n), split ';'}"
 dellog=del %APPDATA%\WatchDox\*.log && del %APPDATA%\WatchDox\*.ldecoded
