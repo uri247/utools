@@ -42,6 +42,7 @@ uni2utf=c:\usr\MinGW\bin\iconv.exe -f unicodelittle -t utf-8 $*
 npp=%ProgramFiles(x86)%\Notepad++\notepad++.exe $*
 vcv="%VS110COMNTOOLS%\..\..\vc\vcvarsall.bat"
 neo="%ProgramFiles(x86)%\HHD Software\Hex Editor Neo\HexFrame.exe" $*
+bc="C:\Program Files (x86)\Beyond Compare 3\BCompare.exe" $*
 
 ssv=c:\usr\SSView\SSView.exe $*
 eclipse=C:\usr\eclipse\eclipse.exe
