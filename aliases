@@ -20,6 +20,7 @@ kitu =taskkill /f /im itunes.exe
 tl   =tasklist $*
 tk   =taskkill $*
 
+adddbg=set path=%path%;c:\Program Files (x86)\Windows Kits\8.0\Debuggers\x86
 wbg  =windbg.exe $*
 wbgol=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\OUTLOOK.EXE" $*
 wbgww=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\WINWORD.EXE" $*
@@ -29,8 +30,8 @@ wbgww12=windbg "%ProgramFiles(x86)%\Microsoft Office\Office12\WINWORD.EXE" $*
 wbgxl12=windbg "%ProgramFiles(x86)%\Microsoft Office\Office12\EXCEL.EXE" $*
 wbgpp12=windbg "%ProgramFiles(x86)%\Microsoft Office\Office12\POWERPNT.EXE" $*
 
-
 wbgie=windbg "%ProgramFiles%\Internet Explorer\iexplore.exe" $*
+wbgrdr=windbg "%ProgramFiles(x86)%\Adobe\Reader 11.0\Reader\AcroRd32.exe"
 
 apps="c:\Program Files\Google\google_appengine\dev_appserver.py" $*
 splitpath=path | perl -ne "{print join qq(\n), split ';'}"
