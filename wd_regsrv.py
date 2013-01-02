@@ -12,7 +12,7 @@ import shutil
 servers = [
     ('qa', 'qa.watchdox.com'),
     ('srv30', 'srv30.watchdox.com'),
-    ('production', 'watchdox.com')
+    ('production', 'www.watchdox.com')
 ]
 
 
