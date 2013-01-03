@@ -14,7 +14,7 @@ g     =findstr $*
 
 
 keng =for %a in (WatchDoxWatchDog WatchDoxEngine WDServiceStarter_32 WDServiceStarter_64) do @taskkill /f /im %a.exe
-koff =taskkill /f /im outlook.exe & taskkill /f /im winword.exe
+koff =for %o in (outlook winword excel powerpnt) do @taskkill /f /im %o.exe
 kie  =taskkill /f /im iexplore.exe
 kitu =taskkill /f /im itunes.exe
 tl   =tasklist $*
