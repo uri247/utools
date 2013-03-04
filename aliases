@@ -20,7 +20,8 @@ kitu =taskkill /f /im itunes.exe
 tl   =tasklist $*
 tk   =taskkill $*
 
-adddbg=set path=%path%;c:\Program Files (x86)\Windows Kits\8.0\Debuggers\x86
+adddbg32=set path=%path%;c:\Program Files (x86)\Windows Kits\8.0\Debuggers\x86
+adddbg64=set path=%path%;c:\Program Files\Debugging Tools for Windows (x64)
 wbg  =windbg.exe $*
 wbgol=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\OUTLOOK.EXE" $*
 wbgww=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\WINWORD.EXE" $*
@@ -30,7 +31,8 @@ wbgww12=windbg "%ProgramFiles(x86)%\Microsoft Office\Office12\WINWORD.EXE" $*
 wbgxl12=windbg "%ProgramFiles(x86)%\Microsoft Office\Office12\EXCEL.EXE" $*
 wbgpp12=windbg "%ProgramFiles(x86)%\Microsoft Office\Office12\POWERPNT.EXE" $*
 
-wbgie=windbg "%ProgramFiles%\Internet Explorer\iexplore.exe" $*
+wbgie=windbg "%ProgramFiles(x86)%\Internet Explorer\iexplore.exe" $*
+
 wbgrdr=windbg "%ProgramFiles(x86)%\Adobe\Reader 11.0\Reader\AcroRd32.exe"
 
 apps="c:\Program Files\Google\google_appengine\dev_appserver.py" $*
@@ -44,6 +46,8 @@ npp=%ProgramFiles(x86)%\Notepad++\notepad++.exe $*
 vcv="%VS110COMNTOOLS%\..\..\vc\vcvarsall.bat"
 neo="%ProgramFiles(x86)%\HHD Software\Hex Editor Neo\HexFrame.exe" $*
 bc="C:\Program Files (x86)\Beyond Compare 3\BCompare.exe" $*
+dep32=c:\usr\utools\x86\depends $*
+dep64=c:\usr\utools\x64\depends $*
 
 ssv=c:\usr\SSView\SSView.exe $*
 eclipse=C:\usr\eclipse\eclipse.exe
