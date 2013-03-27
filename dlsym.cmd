@@ -2,7 +2,7 @@ if .%1 == . goto :usage
 if .%1 == .-p goto :process
 
 :image
-    for /f %%x in ('where.exe %1') do symchk /s srv*c:\local\symbols*http://msdl.microsoft.com/download/symbols /op /oi /od /ob /os %%x
+    for /f "tokens=*" %%x in ('where.exe %1') do symchk /s srv*c:\local\symbols*http://msdl.microsoft.com/download/symbols /op /oi /od /ob /os "%%x"
     goto :end
 
 :process
