@@ -124,7 +124,7 @@ cdn   =pushd c:\t2k\lms\cdn
 tto   =pushd c:\t2k\lms\OfficeAutomation
 
 sdkdir=pushd "%ProgramFiles%\Microsoft SDKs\Windows\v7.1\$*"
-goodguid=uuidgen -n50000 $* | perl -ne "print if /^(.)\1\1\1/;"
+goodguid=uuidgen -n500000 $* | perl -ne "print if /^(.)\1\1\1/;"
 
 vcdir =pushd "%ProgramFiles(x86)%\Microsoft Visual Studio *.0\VC\$*"
 
