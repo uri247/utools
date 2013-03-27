@@ -23,12 +23,15 @@ tk   =taskkill $*
 adddbg=set path=%path%;c:\Program Files (x86)\Windows Kits\8.0\Debuggers\x86
 wbg  =windbg.exe $*
 wbgol=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\OUTLOOK.EXE" $*
-wbgww=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\WINWORD.EXE" $*
-wbgxl=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\EXCEL.EXE" $*
-wbgpp=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\POWERPNT.EXE" $*
+wbgww14=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\WINWORD.EXE" $*
+wbgxl14=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\EXCEL.EXE" $*
+wbgpp14=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\POWERPNT.EXE" $*
 wbgww12=windbg "%ProgramFiles(x86)%\Microsoft Office\Office12\WINWORD.EXE" $*
 wbgxl12=windbg "%ProgramFiles(x86)%\Microsoft Office\Office12\EXCEL.EXE" $*
 wbgpp12=windbg "%ProgramFiles(x86)%\Microsoft Office\Office12\POWERPNT.EXE" $*
+wbgww15=windbg "%ProgramFiles(x86)%\Microsoft Office\Office15\WINWORD.EXE" $*
+wbgxl15=windbg "%ProgramFiles(x86)%\Microsoft Office\Office15\EXCEL.EXE" $*
+wbgpp15=windbg "%ProgramFiles(x86)%\Microsoft Office\Office15\POWERPNT.EXE" $*
 
 wbgie=windbg "%ProgramFiles%\Internet Explorer\iexplore.exe" $*
 wbgrdr=windbg "%ProgramFiles(x86)%\Adobe\Reader 11.0\Reader\AcroRd32.exe"
@@ -83,12 +86,15 @@ tvop ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http:
 
 ie   ="%ProgramFiles(x86)%\Internet Explorer\iexplore.exe" $*
 ol   ="%ProgramFiles(x86)%\Microsoft Office\Office14\OUTLOOK.EXE" $*
-ww   ="%ProgramFiles(x86)%\Microsoft Office\Office14\WINWORD.EXE" $*
-xl   ="%ProgramFiles(x86)%\Microsoft Office\Office14\EXCEL.EXE" $*
-pp   ="%ProgramFiles(x86)%\Microsoft Office\Office14\POWERPNT.EXE" $*
 ww12 ="%ProgramFiles(x86)%\Microsoft Office\Office12\WINWORD.EXE" $*
 xl12 ="%ProgramFiles(x86)%\Microsoft Office\Office12\EXCEL.EXE" $*
 pp12 ="%ProgramFiles(x86)%\Microsoft Office\Office12\POWERPNT.EXE" $*
+ww14 ="%ProgramFiles(x86)%\Microsoft Office\Office14\WINWORD.EXE" $*
+xl14 ="%ProgramFiles(x86)%\Microsoft Office\Office14\EXCEL.EXE" $*
+pp14 ="%ProgramFiles(x86)%\Microsoft Office\Office14\POWERPNT.EXE" $*
+ww15 ="%ProgramFiles(x86)%\Microsoft Office\Office15\WINWORD.EXE" $*
+xl15 ="%ProgramFiles(x86)%\Microsoft Office\Office15\EXCEL.EXE" $*
+pp15 ="%ProgramFiles(x86)%\Microsoft Office\Office15\POWERPNT.EXE" $*
 
 
 
@@ -115,6 +121,7 @@ cut   =pushd c:\uri\cut
 ag    =pushd c:\uri\cut\PerlGames\Amazon
 rms   =pushd c:\uri\rms\RmsCrypto\$*
 wdt   =pushd c:\watchdox\trunk\WindowsPlugin\$*
+37    =pushd c:\watchdox\3.7.1\WindowsPlugin\$*
 scl   =pushd c:\watchdox\secclip\WindowsPlugin
 pyg   =pushd c:\uri\workspace\helloPydev\src\root
 utoo  =pushd c:\usr\utools
