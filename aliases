@@ -23,13 +23,17 @@ tk   =taskkill $*
 adddbg32=set path=%path%;c:\Program Files (x86)\Windows Kits\8.0\Debuggers\x86
 adddbg64=set path=%path%;c:\Program Files\Debugging Tools for Windows (x64)
 wbg  =windbg.exe $*
-wbgol=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\OUTLOOK.EXE" $*
-wbgww=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\WINWORD.EXE" $*
-wbgxl=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\EXCEL.EXE" $*
-wbgpp=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\POWERPNT.EXE" $*
 wbgww12=windbg "%ProgramFiles(x86)%\Microsoft Office\Office12\WINWORD.EXE" $*
 wbgxl12=windbg "%ProgramFiles(x86)%\Microsoft Office\Office12\EXCEL.EXE" $*
 wbgpp12=windbg "%ProgramFiles(x86)%\Microsoft Office\Office12\POWERPNT.EXE" $*
+wbgol14=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\OUTLOOK.EXE" $*
+wbgww14=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\WINWORD.EXE" $*
+wbgxl14=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\EXCEL.EXE" $*
+wbgpp14=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\POWERPNT.EXE" $*
+wbgol15=windbg "%ProgramFiles(x86)%\Microsoft Office\Office15\OUTLOOK.EXE" $*
+wbgww15=windbg "%ProgramFiles(x86)%\Microsoft Office\Office15\WINWORD.EXE" $*
+wbgxl15=windbg "%ProgramFiles(x86)%\Microsoft Office\Office15\EXCEL.EXE" $*
+wbgpp15=windbg "%ProgramFiles(x86)%\Microsoft Office\Office15\POWERPNT.EXE" $*
 
 wbgie=windbg "%ProgramFiles(x86)%\Internet Explorer\iexplore.exe" $*
 
@@ -86,13 +90,17 @@ tvop ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http:
 
 
 ie   ="%ProgramFiles(x86)%\Internet Explorer\iexplore.exe" $*
-ol   ="%ProgramFiles(x86)%\Microsoft Office\Office14\OUTLOOK.EXE" $*
-ww   ="%ProgramFiles(x86)%\Microsoft Office\Office14\WINWORD.EXE" $*
-xl   ="%ProgramFiles(x86)%\Microsoft Office\Office14\EXCEL.EXE" $*
-pp   ="%ProgramFiles(x86)%\Microsoft Office\Office14\POWERPNT.EXE" $*
 ww12 ="%ProgramFiles(x86)%\Microsoft Office\Office12\WINWORD.EXE" $*
 xl12 ="%ProgramFiles(x86)%\Microsoft Office\Office12\EXCEL.EXE" $*
 pp12 ="%ProgramFiles(x86)%\Microsoft Office\Office12\POWERPNT.EXE" $*
+ol14   ="%ProgramFiles(x86)%\Microsoft Office\Office14\OUTLOOK.EXE" $*
+ww14   ="%ProgramFiles(x86)%\Microsoft Office\Office14\WINWORD.EXE" $*
+xl14   ="%ProgramFiles(x86)%\Microsoft Office\Office14\EXCEL.EXE" $*
+pp14   ="%ProgramFiles(x86)%\Microsoft Office\Office14\POWERPNT.EXE" $*
+ol15   ="%ProgramFiles(x86)%\Microsoft Office\Office15\OUTLOOK.EXE" $*
+ww15   ="%ProgramFiles(x86)%\Microsoft Office\Office15\WINWORD.EXE" $*
+xl15   ="%ProgramFiles(x86)%\Microsoft Office\Office15\EXCEL.EXE" $*
+pp15   ="%ProgramFiles(x86)%\Microsoft Office\Office15\POWERPNT.EXE" $*
 
 
 
