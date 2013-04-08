@@ -74,6 +74,7 @@ gg="%ProgramFiles(x86)%\Git\bin\wish.exe" "%ProgramFiles(x86)%\Git\libexec\git-c
 bash=C:\usr\MinGW\msys\1.0\bin\bash.exe --login -i
 
 luchrome=runas /u:%COMPUTERNAME%\localuri "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"
+wd="c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\WinDiff.Exe" $*
 
 
 glz  ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://radio.glz.co.il:8000/galatz
@@ -124,6 +125,7 @@ skyd  =pushd %UserProfile%\SkyDrive\$*
 googd =pushd "%UserProfile%\GoogleDrive\$*"
 rmsad =pushd %LOCALAPPDATA%\Microsoft\DRM
 cut   =pushd c:\uri\cut\$*
+pp    =pushd c:\uri\pp\$*
 dj    =pushd c:\uri\cut\Dj\$*
 ag    =pushd c:\uri\cut\PerlGames\Amazon
 rms   =pushd c:\uri\rms\RmsCrypto\$*
