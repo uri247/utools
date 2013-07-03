@@ -17,6 +17,7 @@ keng =for %a in (WatchDoxWatchDog WatchDoxEngine WDServiceStarter_32 WDServiceSt
 koff =for %o in (outlook winword excel powerpnt) do @taskkill /f /im %o.exe
 kie  =taskkill /f /im iexplore.exe
 kitu =taskkill /f /im itunes.exe
+kpy  =taskkill /f /im python.exe & taskkill /f /im pythonw.exe
 tl   =tasklist $*
 tk   =taskkill $*
 
@@ -34,12 +35,12 @@ wbgol15=windbg "%ProgramFiles(x86)%\Microsoft Office\Office15\OUTLOOK.EXE" $*
 wbgww15=windbg "%ProgramFiles(x86)%\Microsoft Office\Office15\WINWORD.EXE" $*
 wbgxl15=windbg "%ProgramFiles(x86)%\Microsoft Office\Office15\EXCEL.EXE" $*
 wbgpp15=windbg "%ProgramFiles(x86)%\Microsoft Office\Office15\POWERPNT.EXE" $*
-
 wbgie=windbg "%ProgramFiles(x86)%\Internet Explorer\iexplore.exe" $*
-
 wbgrdr=windbg "%ProgramFiles(x86)%\Adobe\Reader 11.0\Reader\AcroRd32.exe"
+wbgdev8=windbg -k net:port=50000,key=1.1.1.1
 
-apps="c:\Program Files\Google\google_appengine\dev_appserver.py" $*
+apps="c:\lib\google_appengine\dev_appserver.py" $*
+gsu=python c:\lib\gsutil\gsutil.py $*
 splitpath=path | perl -ne "{print join qq(\n), split ';'}"
 dellog=del %APPDATA%\WatchDox\*.log && del %APPDATA%\WatchDox\*.ldecoded
 dlog=c:\watchdox\trunk\WindowsPlugin\Debug\Log.Decoder.exe $* -s
@@ -141,10 +142,17 @@ tto   =pushd c:\t2k\lms\OfficeAutomation
 sdkdir=pushd "%ProgramFiles%\Microsoft SDKs\Windows\v7.1\$*"
 goodguid=uuidgen -n50000 $* | perl -ne "print if /^(.)\1\1\1/;"
 
-vcdir =pushd "%ProgramFiles(x86)%\Microsoft Visual Studio *.0\VC\$*"
+vcdir =pushd "%ProgramFiles(x86)%\Microsoft Visual Studio 11.0\VC\$*"
 
 fixroute    =route add 172.16.24.0 mask 255.255.248.0 172.16.0.22 IF 39
 fixrout     =route add 172.16.24.0 mask 255.255.248.0 172.16.0.22 IF $*
 
 pedir =perl -e "{for (<*>) {print qq($_\n);} }"
 pefwinfo=dir /s /b info.txt | perl -ne "/(?<=\\)[^\\]*(?=\\info.txt)/; print qq($&\n)"
+detab =perl -pe '1 while s/\t/" "x(4-($-[0]%4))/e' $*
+
+
+
+
+
+
