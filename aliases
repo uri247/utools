@@ -87,6 +87,7 @@ wqxr ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http:
 wfmu ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://stream0.wfmu.org/freeform-128k.mp3
 kexp ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open mms://media-wm.cac.washington.edu/KEXP-Live
 tvop ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://uk2-vn.mixstream.net:8004
+prdz ="%ProgramFiles%\windows Media Player\wmplayer.exe" /prefetch:1 /open http://scfire-f10.websys.aol.com:80/radio_paradise_mp3_128kbps
 
 
 
