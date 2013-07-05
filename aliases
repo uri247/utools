@@ -136,6 +136,7 @@ scl   =pushd c:\watchdox\secclip\WindowsPlugin
 pyg   =pushd c:\uri\workspace\helloPydev\src\root
 utoo  =pushd c:\usr\utools
 wdd   =pushd c:\t\wdd
+sia   =pushd c:\IntelScs\sia\$*
 
 cdn   =pushd c:\t2k\lms\cdn
 tto   =pushd c:\t2k\lms\OfficeAutomation
