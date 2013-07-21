@@ -31,7 +31,7 @@ f.close()
 #
 # spawn vi, and let the user edit
 #
-os.system( 'vim ' + fname )
+os.system( 'notepad ' + fname )
 
 #
 # read it back and echo to the user
