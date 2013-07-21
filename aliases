@@ -38,6 +38,7 @@ wbgpp15=windbg "%ProgramFiles(x86)%\Microsoft Office\Office15\POWERPNT.EXE" $*
 wbgie=windbg "%ProgramFiles(x86)%\Internet Explorer\iexplore.exe" $*
 wbgrdr=windbg "%ProgramFiles(x86)%\Adobe\Reader 11.0\Reader\AcroRd32.exe"
 wbgdev8=windbg -k net:port=50000,key=1.1.1.1
+kdbg=windbg -k net:port=50000,key=1.2.3.4 $*
 
 apps="c:\lib\google_appengine\dev_appserver.py" $*
 gsu=python c:\lib\gsutil\gsutil.py $*
