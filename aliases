@@ -1,5 +1,5 @@
 vi   =vim $*
-als  =vim c:\usr\utools\aliases && doskey /macrofile=c:\usr\utools\aliases
+als  =%EDITOR% c:\usr\utools\aliases && doskey /macrofile=c:\usr\utools\aliases
 nals =start /wait notepad c:\usr\utools\aliases && doskey /macrofile=c:\usr\utools\aliases
 showals=doskey /macros | findstr "^$1="
 vihosts=vim C:\Windows\System32\drivers\etc\hosts
