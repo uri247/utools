@@ -39,6 +39,7 @@ wbgie=windbg "%ProgramFiles(x86)%\Internet Explorer\iexplore.exe" $*
 wbgrdr=windbg "%ProgramFiles(x86)%\Adobe\Reader 11.0\Reader\AcroRd32.exe"
 wbgdev8=windbg -k net:port=50000,key=1.1.1.1
 kdbg=windbg -k net:port=50000,key=1.2.3.4 $*
+symc=symchk /s srv*c:\local\symbols*http://msdl.microsoft.com/download/symbols /op /oi /od /ob /os $*
 
 apps="c:\lib\google_appengine\dev_appserver.py" $*
 gsu=python c:\lib\gsutil\gsutil.py $*
