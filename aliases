@@ -133,6 +133,7 @@ pp    =pushd c:\uri\pp\$*
 dj    =pushd c:\uri\cut\Dj\$*
 ag    =pushd c:\uri\cut\PerlGames\Amazon
 rms   =pushd c:\uri\rms\RmsCrypto\$*
+proj  =pushd c:\uri\Projects
 wdt   =pushd c:\watchdox\trunk\WindowsPlugin\$*
 scl   =pushd c:\watchdox\secclip\WindowsPlugin
 pyg   =pushd c:\uri\workspace\helloPydev\src\root
