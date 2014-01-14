@@ -21,7 +21,7 @@ kpy  =taskkill /f /im python.exe & taskkill /f /im pythonw.exe
 tl   =tasklist $*
 tk   =taskkill $*
 
-adddbg32=set path=%path%;c:\Program Files (x86)\Windows Kits\8.0\Debuggers\x86
+adddbg32=set path=%path%;c:\Program Files (x86)\Windows Kits\8.1\Debuggers\x86
 adddbg64=set path=%path%;c:\Program Files\Debugging Tools for Windows (x64)
 wbg  =windbg.exe $*
 wbgww12=windbg "%ProgramFiles(x86)%\Microsoft Office\Office12\WINWORD.EXE" $*
@@ -57,6 +57,7 @@ neo="%ProgramFiles(x86)%\HHD Software\Hex Editor Neo\HexFrame.exe" $*
 bc="C:\Program Files (x86)\Beyond Compare 3\BCompare.exe" $*
 dep32=c:\usr\utools\x86\depends $*
 dep64=c:\usr\utools\x64\depends $*
+hh="C:\Program Files (x86)\Microsoft Help Viewer\v2.1\HlpViewer.exe" /catalogName VisualStudio12
 
 ssv=c:\usr\SSView\SSView.exe $*
 eclipse=C:\usr\eclipse\eclipse.exe
