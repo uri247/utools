@@ -1,3 +1,4 @@
+
 vi   =vim $*
 als  =%EDITOR% c:\usr\utools\aliases && doskey /macrofile=c:\usr\utools\aliases
 nals =start /wait notepad c:\usr\utools\aliases && doskey /macrofile=c:\usr\utools\aliases
@@ -81,6 +82,7 @@ bash=C:\usr\MinGW\msys\1.0\bin\bash.exe --login -i
 
 luchrome=runas /u:%COMPUTERNAME%\localuri "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"
 wd="c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\WinDiff.Exe" $*
+ssh=C:\usr\cygwin\bin\ssh.exe $*
 
 
 glz  ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://radio.glz.co.il:8000/galatz
@@ -149,9 +151,13 @@ sias  =pushd c:\IntelScs\sia\scripts\$*
 iss   =pushd c:\IntelScs\doc\sample-iss\$*
 rcs   =pushd c:\IntelSCS\Resources\IntelSCS\RCS\$*
 tmp   =pushd %tmp%
-
 cdn   =pushd c:\t2k\lms\cdn
 tto   =pushd c:\t2k\lms\OfficeAutomation
+ph    =pushd c:\ph\$*
+lima  =pushd c:\ph\lima\$*
+utx   =pushd c:\ph\lima\utx\$*
+cmc   =pushd c:\ph\lima\cmc\cmc\$*
+
 
 sdkdir=pushd "%ProgramFiles%\Microsoft SDKs\Windows\v7.1\$*"
 kitdir=pushd "%ProgramFiles(x86)%\Windows Kits\8.1\$*"
