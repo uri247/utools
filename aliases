@@ -1,3 +1,4 @@
+
 vi   =vim $*
 als  =%EDITOR% c:\usr\utools\aliases && doskey /macrofile=c:\usr\utools\aliases
 showals=doskey /macros | findstr "^$1="
@@ -74,6 +75,7 @@ wd="c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\WinDiff.Exe" $*
 bc     ="%ProgramFiles(x86)%\Beyond Compare 3\BCompare.exe" $*
 chrome="%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"
 luchrome=runas /u:%COMPUTERNAME%\localuri "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"
+ssh=C:\usr\cygwin\bin\ssh.exe $*
 
 #bash=C:\usr\MinGW\msys\1.0\bin\bash.exe --login -i
 bash=C:\usr\cygwin\bin\bash.exe --login -i
@@ -144,9 +146,13 @@ sias  =pushd c:\IntelScs\sia\scripts\$*
 iss   =pushd c:\IntelScs\doc\sample-iss\$*
 rcs   =pushd c:\IntelSCS\Resources\IntelSCS\RCS\$*
 tmp   =pushd %tmp%
-
 cdn   =pushd c:\t2k\lms\cdn
 tto   =pushd c:\t2k\lms\OfficeAutomation
+ph    =pushd c:\ph\$*
+lima  =pushd c:\ph\lima\$*
+utx   =pushd c:\ph\lima\utx\$*
+cmc   =pushd c:\ph\lima\cmc\cmc\$*
+
 
 sdkdir=pushd "%ProgramFiles%\Microsoft SDKs\Windows\v7.1\$*"
 kitdir=pushd "%ProgramFiles(x86)%\Windows Kits\8.1\$*"
