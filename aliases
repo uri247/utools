@@ -1,17 +1,14 @@
 
 vi   =vim $*
 als  =%EDITOR% c:\usr\utools\aliases && doskey /macrofile=c:\usr\utools\aliases
-nals =start /wait notepad c:\usr\utools\aliases && doskey /macrofile=c:\usr\utools\aliases
 showals=doskey /macros | findstr "^$1="
 vihosts=vim C:\Windows\System32\drivers\etc\hosts
 
 ll   =dir $*
 ls   =dir $*
-
 g     =findstr $*
 pg    =perl -ne "print qq($.: $_) if /$1/" $2
 #grep =c:\usr\MinGW\msys\1.0\bin\grep.exe $*
-g     =findstr $*
 
 
 keng =for %a in (WatchDoxWatchDog WatchDoxEngine WDServiceStarter_32 WDServiceStarter_64) do @taskkill /f /im %a.exe
@@ -42,6 +39,7 @@ wbgdev8=windbg -k net:port=50000,key=1.1.1.1
 kdbg=windbg -k net:port=50000,key=1.2.3.4 $*
 symc=symchk /s srv*c:\local\symbols*http://msdl.microsoft.com/download/symbols /op /oi /od /ob /os $*
 
+
 apps="c:\lib\google_appengine\dev_appserver.py" . $*
 gsu=python c:\usr\gsutil\gsutil $*
 splitpath=path | perl -ne "{print join qq(\n), split ';'}"
@@ -53,13 +51,11 @@ uni2utf=c:\usr\MinGW\bin\iconv.exe -f unicodelittle -t utf-8 $*
 npp=%ProgramFiles(x86)%\Notepad++\notepad++.exe $*
 vcv="%VS120COMNTOOLS%\..\..\vc\vcvarsall.bat"
 devsh="%VS120COMNTOOLS%\VsDevCmd.bat" $*
-VS120COMNTOOLS=C:\Program Files\Microsoft Visual Studio 12.0\Common7\Tools\
 neo="%ProgramFiles(x86)%\HHD Software\Hex Editor Neo\HexFrame.exe" $*
 bc="C:\Program Files (x86)\Beyond Compare 3\BCompare.exe" $*
 dep32=c:\usr\utools\x86\depends $*
 dep64=c:\usr\utools\x64\depends $*
 hh="C:\Program Files (x86)\Microsoft Help Viewer\v2.1\HlpViewer.exe" /catalogName VisualStudio12
-
 ssv=c:\usr\SSView\SSView.exe $*
 eclipse=C:\usr\eclipse\eclipse.exe
 ga=c:\uri\cut\PerlGames\AllKind\getaspect.pl
@@ -72,9 +68,7 @@ sysdm=sysdm.cpl
 openvpn="C:\Program Files\OpenVPN\bin\openvpn-gui-1.0.3.exe"
 hb="%ProgramFiles(x86)%\Handbrake\Handbrake.exe"
 wdu=c:\usr\wtools\du $*
-chrome="%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"
 trnsmgr="C:\Windows\Downloaded Program Files\TransferMgr.exe"
-
 tsvnlog=TortoiseProc /command:log /path:.
 gg="%ProgramFiles(x86)%\Git\bin\wish.exe" "%ProgramFiles(x86)%\Git\libexec\git-core\git-gui"
 
@@ -83,8 +77,14 @@ bash=C:\usr\cygwin\bin\bash.exe --login -i
 
 luchrome=runas /u:%COMPUTERNAME%\localuri "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"
 wd="c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\WinDiff.Exe" $*
+bc     ="%ProgramFiles(x86)%\Beyond Compare 3\BCompare.exe" $*
+chrome="%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"
+luchrome=runas /u:%COMPUTERNAME%\localuri "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"
 ssh=C:\usr\cygwin\bin\ssh.exe $*
 
+#bash=C:\usr\MinGW\msys\1.0\bin\bash.exe --login -i
+bash=C:\usr\cygwin\bin\bash.exe --login -i
+ssh=c:\usr\cygwin\bin\ssh.exe $*
 
 glz  ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://radio.glz.co.il:8000/galatz
 gglz ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://radio.glz.co.il:8000/galgalatz
@@ -113,7 +113,6 @@ ww15   ="%ProgramFiles(x86)%\Microsoft Office\Office15\WINWORD.EXE" $*
 xl15   ="%ProgramFiles(x86)%\Microsoft Office\Office15\EXCEL.EXE" $*
 pp15   ="%ProgramFiles(x86)%\Microsoft Office\Office15\POWERPNT.EXE" $*
 
-bc     ="%ProgramFiles(x86)%\Beyond Compare 3\BCompare.exe" $*
 
 
 
@@ -163,9 +162,9 @@ infra =pushd c:\ph\infra\InfrastructureSolution\$*
 
 sdkdir=pushd "%ProgramFiles%\Microsoft SDKs\Windows\v7.1\$*"
 kitdir=pushd "%ProgramFiles(x86)%\Windows Kits\8.1\$*"
-goodguid=uuidgen -n50000 $* | perl -ne "print if /^(.)\1\1\1/;"
-
 vcdir =pushd "%ProgramFiles(x86)%\Microsoft Visual Studio 12.0\VC\$*"
+
+goodguid=uuidgen -n50000 $* | perl -ne "print if /^(.)\1\1\1/;"
 
 fixroute    =route add 172.16.24.0 mask 255.255.248.0 172.16.0.22 IF 39
 fixrout     =route add 172.16.24.0 mask 255.255.248.0 172.16.0.22 IF $*
@@ -173,9 +172,5 @@ fixrout     =route add 172.16.24.0 mask 255.255.248.0 172.16.0.22 IF $*
 pedir =perl -e "{for (<*>) {print qq($_\n);} }"
 pefwinfo=dir /s /b info.txt | perl -ne "/(?<=\\)[^\\]*(?=\\info.txt)/; print qq($&\n)"
 detab =perl -pe '1 while s/\t/" "x(4-($-[0]%4))/e' $*
-
-
-
-
 
 
