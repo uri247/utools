@@ -78,7 +78,8 @@ trnsmgr="C:\Windows\Downloaded Program Files\TransferMgr.exe"
 tsvnlog=TortoiseProc /command:log /path:.
 gg="%ProgramFiles(x86)%\Git\bin\wish.exe" "%ProgramFiles(x86)%\Git\libexec\git-core\git-gui"
 
-bash=C:\usr\MinGW\msys\1.0\bin\bash.exe --login -i
+#bash=C:\usr\MinGW\msys\1.0\bin\bash.exe --login -i
+bash=C:\usr\cygwin\bin\bash.exe --login -i
 
 luchrome=runas /u:%COMPUTERNAME%\localuri "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"
 wd="c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\WinDiff.Exe" $*
@@ -157,6 +158,7 @@ ph    =pushd c:\ph\$*
 lima  =pushd c:\ph\lima\$*
 utx   =pushd c:\ph\lima\utx\$*
 cmc   =pushd c:\ph\lima\cmc\cmc\$*
+infra =pushd c:\ph\infra\InfrastructureSolution\$*
 
 
 sdkdir=pushd "%ProgramFiles%\Microsoft SDKs\Windows\v7.1\$*"
