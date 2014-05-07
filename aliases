@@ -71,6 +71,8 @@ wdu=c:\usr\wtools\du $*
 trnsmgr="C:\Windows\Downloaded Program Files\TransferMgr.exe"
 tsvnlog=TortoiseProc /command:log /path:.
 gg="%ProgramFiles(x86)%\Git\bin\wish.exe" "%ProgramFiles(x86)%\Git\libexec\git-core\git-gui"
+ssms="C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\Ssms.exe"
+msbld="c:\Program Files (x86)\MSBuild\12.0\Bin\amd64\MSBuild.exe" $*
 
 #bash=C:\usr\MinGW\msys\1.0\bin\bash.exe --login -i
 bash=C:\usr\cygwin\bin\bash.exe --login -i
@@ -153,11 +155,15 @@ rcs   =pushd c:\IntelSCS\Resources\IntelSCS\RCS\$*
 tmp   =pushd %tmp%
 cdn   =pushd c:\t2k\lms\cdn
 tto   =pushd c:\t2k\lms\OfficeAutomation
-ph    =pushd c:\ph\$*
-lima  =pushd c:\ph\lima\$*
-utx   =pushd c:\ph\lima\utx\$*
-cmc   =pushd c:\ph\lima\cmc\cmc\$*
-infra =pushd c:\ph\infra\InfrastructureSolution\$*
+
+ph    =pushd c:\puzzle\$*
+infra =pushd c:\puzzle\infra\$*
+lima  =pushd c:\puzzle\lima\$*
+limas =pushd c:\puzzle\lima\server\$*
+limag =pushd c:\puzzle\lima\client\*
+nl    =pushd c:\puzzle\netline\$*
+nls   =pushd c:\puzzle\netline\server\$*
+nlg   =pushd c:\puzzle\netline\gui\$*
 
 
 sdkdir=pushd "%ProgramFiles%\Microsoft SDKs\Windows\v7.1\$*"
