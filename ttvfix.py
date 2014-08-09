@@ -4,18 +4,22 @@ import re
 
 
 known_shows = [
+    '24',
     'Ali.G.Rezurection',
     'Californication',
     'Cosmos.A.Space.Time.Odyssey',
-    'Orphan.Black',
+    'Derek',
     'Episodes',
+    'Extant',
     'Fargo',
     'Game.of.Thrones',
     'Greys.Anatomy',
+    'Louie',
     'Mad.Men',
     'Modern.Family',
     'Nashville.2012',
     'Nurse.Jackie',
+    'Orphan.Black',
     'Parks.and.Recreation',
     'Portlandia',
     'Scandal.US',
@@ -31,6 +35,7 @@ known_talkshow = [
     'The.Daily.Show',
     'David.Letterman',
     'Jimmy.Fallon',
+    'Real.Time.with.Bill.Maher',
     'Seth.Meyers',
 ]
 
