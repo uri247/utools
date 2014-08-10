@@ -72,7 +72,7 @@ trnsmgr="C:\Windows\Downloaded Program Files\TransferMgr.exe"
 tsvnlog=TortoiseProc /command:log /path:.
 gg="%ProgramFiles(x86)%\Git\bin\wish.exe" "%ProgramFiles(x86)%\Git\libexec\git-core\git-gui"
 ssms="C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\Ssms.exe"
-msbld="c:\Program Files (x86)\MSBuild\12.0\Bin\amd64\MSBuild.exe" $*
+msbld="%ProgramFiles(x86)%\MSBuild\12.0\Bin\amd64\MSBuild.exe" $*
 bldtt=c:\PROGRA~2\MSBuild\12.0\Bin\amd64\MSBuild.exe /t:Build /p:Configuration=Debug lima.tictool.sln
 
 #bash=C:\usr\MinGW\msys\1.0\bin\bash.exe --login -i
@@ -136,7 +136,8 @@ dl    =pushd %UserProfile%\downloads
 myd   =pushd %UserProfile%\Documents
 dbox  =pushd %UserProfile%\dropbox\$*
 skyd  =pushd %UserProfile%\SkyDrive\$*
-googd =pushd "%UserProfile%\GoogleDrive\$*"
+gd    =pushd c:\local\GoogleDrive
+gdt    =pushd c:\local\GoogleDrive\Transfer
 rmsad =pushd %LOCALAPPDATA%\Microsoft\DRM
 cut   =pushd c:\uri\cut\$*
 pp    =pushd c:\uri\pp\$*
