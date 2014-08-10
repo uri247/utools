@@ -73,6 +73,7 @@ tsvnlog=TortoiseProc /command:log /path:.
 gg="%ProgramFiles(x86)%\Git\bin\wish.exe" "%ProgramFiles(x86)%\Git\libexec\git-core\git-gui"
 ssms="C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\Ssms.exe"
 msbld="c:\Program Files (x86)\MSBuild\12.0\Bin\amd64\MSBuild.exe" $*
+bldtt=c:\PROGRA~2\MSBuild\12.0\Bin\amd64\MSBuild.exe /t:Build /p:Configuration=Debug lima.tictool.sln
 
 #bash=C:\usr\MinGW\msys\1.0\bin\bash.exe --login -i
 bash=C:\usr\cygwin\bin\bash.exe --login -i
