@@ -75,7 +75,8 @@ ssms="C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudi
 msbld="%ProgramFiles(x86)%\MSBuild\12.0\Bin\amd64\MSBuild.exe" $*
 
 #bash=C:\usr\MinGW\msys\1.0\bin\bash.exe --login -i
-bash=C:\usr\cygwin\bin\bash.exe --login -i
+#bash=C:\usr\cygwin\bin\bash.exe --login -i
+bash=bash.exe --login -i
 
 luchrome=runas /u:%COMPUTERNAME%\localuri "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"
 wd="c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\WinDiff.Exe" $*
@@ -84,9 +85,6 @@ chrome="%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"
 luchrome=runas /u:%COMPUTERNAME%\localuri "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"
 ssh=C:\usr\cygwin\bin\ssh.exe $*
 
-#bash=C:\usr\MinGW\msys\1.0\bin\bash.exe --login -i
-bash=C:\usr\cygwin\bin\bash.exe --login -i
-ssh=c:\usr\cygwin\bin\ssh.exe $*
 
 glz  ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://radio.glz.co.il:8000/galatz
 gglz ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://radio.glz.co.il:8000/galgalatz
@@ -125,6 +123,8 @@ up    =pushd ..\$*
 upp   =pushd ..\..\$*
 uppp  =pushd ..\..\..\$*
 upppp =pushd ..\..\..\..\$*
+dbox  =pushd "%_ush_dboxfldr%"
+bt    =pushd "%_ush_dboxfldr%\bt"
 wirm  =pushd c:\confidela\SDClient\WindowsPlugin\$*
 adata =pushd %APPDATA%\$*
 ldata =pushd %LOCALAPPDATA%\$*
@@ -133,11 +133,9 @@ h     =pushd %UserProfile%\$*
 home  =pushd %UserProfile%\$*
 dl    =pushd %UserProfile%\downloads
 myd   =pushd %UserProfile%\Documents
-dbox  =pushd %UserProfile%\dropbox\$*
 skyd  =pushd %UserProfile%\SkyDrive\$*
-gd    =pushd c:\local\GoogleDrive
-gdt    =pushd c:\local\GoogleDrive\Transfer
 rmsad =pushd %LOCALAPPDATA%\Microsoft\DRM
+uri   =pushd c:\uri
 cut   =pushd c:\uri\cut\$*
 pp    =pushd c:\uri\pp\$*
 dj    =pushd c:\uri\cut\Dj\$*
@@ -165,6 +163,9 @@ limag =pushd c:\puzzle\lima\client\*
 nl    =pushd c:\puzzle\netline\$*
 nls   =pushd c:\puzzle\netline\server\$*
 nlg   =pushd c:\puzzle\netline\gui\$*
+gfk   =pushd c:\puzzle\gfk
+dash  =pushd c:\puzzle\gfk\dashboard
+dashdb=pushd c:\puzzle\gfk\dashboard-db
 
 
 sdkdir=pushd "%ProgramFiles%\Microsoft SDKs\Windows\v7.1\$*"
