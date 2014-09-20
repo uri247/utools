@@ -1,0 +1,14 @@
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-TARGETDURATION:20
+#EXT-X-MEDIA-SEQUENCE:210334
+#EXTINF:9.927,
+http://80.244.172.12:80/glz-a-zixief/glz-a-zixief/210334.ts?user=HTTP_Proxy_interstream2_5234599&session=&hlsid=HLS_2976383
+#EXTINF:9.855,
+http://80.244.172.12:80/glz-a-zixief/glz-a-zixief/210335.ts?user=HTTP_Proxy_interstream2_5234599&session=&hlsid=HLS_2976383
+#EXTINF:9.856,
+http://80.244.172.12:80/glz-a-zixief/glz-a-zixief/210336.ts?user=HTTP_Proxy_interstream2_5234599&session=&hlsid=HLS_2976383
+#EXTINF:9.905,
+http://80.244.172.12:80/glz-a-zixief/glz-a-zixief/210337.ts?user=HTTP_Proxy_interstream2_5234599&session=&hlsid=HLS_2976383
+#EXTINF:9.972,
+http://80.244.172.12:80/glz-a-zixief/glz-a-zixief/210338.ts?user=HTTP_Proxy_interstream2_5234599&session=&hlsid=HLS_2976383
