@@ -14,10 +14,6 @@ rem
     if "%PROCESSOR_ARCHITECTURE%"=="x86" set archname=x86
 
 
-:aliases
-    doskey /macrofile=c:\usr\utools\aliases
-
-
 :verify_java
     if "%JAVA_HOME%"==""                       echo WARNING: no JAVA settings && goto no_java
     if not exist "%JAVA_HOME%"                 echo ERROR: JAVA_HOME defined but %%^JAVA_HOME%% doesn't exist && goto error
@@ -26,6 +22,14 @@ rem
     if errorlevel 1                            echo ERROR: java compiler ^(javac.exe^) is not in path. && goto error
 
 :no_java
+
+
+:dbox
+    for /f "delims=" %%x in ('GetDboxFldr.py') do set _ush_dboxfldr=%%x
+
+
+:aliases
+    doskey /macrofile=c:\usr\utools\aliases
 
 
 :root
