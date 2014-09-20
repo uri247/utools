@@ -83,11 +83,9 @@ wd="c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\WinDiff.Exe" $*
 bc     ="%ProgramFiles(x86)%\Beyond Compare 3\BCompare.exe" $*
 chrome="%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"
 luchrome=runas /u:%COMPUTERNAME%\localuri "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"
-ssh=C:\usr\cygwin\bin\ssh.exe $*
 
 #bash=C:\usr\MinGW\msys\1.0\bin\bash.exe --login -i
 bash=C:\usr\cygwin\bin\bash.exe --login -i
-ssh=c:\usr\cygwin\bin\ssh.exe $*
 
 glz  ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://radio.glz.co.il:8000/galatz
 gglz ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://radio.glz.co.il:8000/galgalatz
