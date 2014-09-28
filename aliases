@@ -140,29 +140,16 @@ ag    =pushd c:\uri\cut\PerlGames\Amazon
 rms   =pushd c:\uri\rms\RmsCrypto\$*
 proj  =pushd c:\uri\Projects
 wdt   =pushd c:\watchdox\trunk\WindowsPlugin\$*
-scl   =pushd c:\watchdox\secclip\WindowsPlugin
 pyg   =pushd c:\uri\workspace\helloPydev\src\root
 utoo  =pushd c:\usr\utools
-wdd   =pushd c:\t\wdd
 sia   =pushd c:\IntelScs\sia\$*
-sias  =pushd c:\IntelScs\sia\scripts\$*
-iss   =pushd c:\IntelScs\doc\sample-iss\$*
-rcs   =pushd c:\IntelSCS\Resources\IntelSCS\RCS\$*
 tmp   =pushd %tmp%
 cdn   =pushd c:\t2k\lms\cdn
 tto   =pushd c:\t2k\lms\OfficeAutomation
-
 ph    =pushd c:\puzzle\$*
-infra =pushd c:\puzzle\infra\$*
-lima  =pushd c:\puzzle\lima\$*
-limas =pushd c:\puzzle\lima\server\$*
-limag =pushd c:\puzzle\lima\client\*
 nl    =pushd c:\puzzle\netline\$*
-nls   =pushd c:\puzzle\netline\server\$*
-nlg   =pushd c:\puzzle\netline\gui\$*
-gfk   =pushd c:\puzzle\gfk
-dash  =pushd c:\puzzle\gfk\dashboard
-dashdb=pushd c:\puzzle\gfk\dashboard-db
+so    =pushd c:\rlm\seaotter\$*
+kf    =pushd c:\rlm\seaotter\kf\$*
 
 
 sdkdir=pushd "%ProgramFiles%\Microsoft SDKs\Windows\v7.1\$*"
