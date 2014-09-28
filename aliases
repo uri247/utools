@@ -149,7 +149,7 @@ tto   =pushd c:\t2k\lms\OfficeAutomation
 ph    =pushd c:\puzzle\$*
 nl    =pushd c:\puzzle\netline\$*
 so    =pushd c:\rlm\seaotter\$*
-kf    =pushd c:\rlm\seaotter\kf\$*
+kf    =pushd c:\rlm\seaotter\KelpForest\$*
 
 
 sdkdir=pushd "%ProgramFiles%\Microsoft SDKs\Windows\v7.1\$*"
