@@ -14,6 +14,7 @@ known_shows = [
     'Fargo',
     'Game.of.Thrones',
     'Greys.Anatomy',
+    'Homeland',
     'Louie',
     'Mad.Men',
     'Modern.Family',
@@ -25,6 +26,7 @@ known_shows = [
     'Portlandia',
     'Scandal.US',
     'Shameless.US',
+    'The.Affair',
     'The.Goldbergs.2013',
     'The.Good.Wife',
     'The.Leftovers',
@@ -58,22 +60,22 @@ def my_rename(src, target):
             print 'ERROR:', x
 
 
-g = glob.glob('*.mp4')
+g = glob.glob('*.mp4') + glob.glob('*.avi')
 for file_name in g:
-    result = re.match(r'(.+)\.(S\d\dE\d\d)(\..*)?\.mp4', file_name)
+    result = re.match(r'(.+)\.(S\d\dE\d\d)(\..*)?\.(mp4|avi)', file_name)
     if result:
-        series, episode, _ = result.groups()
+        series, episode, _, ext = result.groups()
         if series in known_shows:
-            target_name = '%s.%s.mp4' % (series, episode)
+            target_name = '%s.%s.%s' % (series, episode, ext)
             my_rename(file_name, target_name)
         else:
             print 'UNKNOWN SHOW:', file_name
     else:
-        result = re.match(r'(.+)\.(\d\d\d\d\.\d\d\.\d\d)\.(.*)(\.HDTV)?.*.mp4', file_name)
+        result = re.match(r'(.+)\.(\d\d\d\d\.\d\d\.\d\d)\.(.*)(\.HDTV)?.*.(mp4|avi)', file_name)
         if result:
-            series, date, guest, _ = result.groups()
+            series, date, guest, _, ext = result.groups()
             if series in known_talkshow:
-                target_name = '%s.%s.%s.mp4' % (series, date, guest)
+                target_name = '%s.%s.%s.%s' % (series, date, guest, ext)
                 my_rename(file_name, target_name)
             else:
                 print 'UNKNOWN TALK SHOW:', file_name
