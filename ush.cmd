@@ -5,6 +5,9 @@ rem
 
 
 
+:set_uri
+    if "%URI_HOME%"=="" set URI_HOME=c:\uri
+
 :set_programfiles_on_x86
     if "%ProgramFiles(x86)%"=="" set ProgramFiles(x86)=%ProgramFiles%
 
