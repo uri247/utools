@@ -61,7 +61,6 @@ eclipse=C:\usr\eclipse\eclipse.exe
 ga=c:\uri\cut\PerlGames\AllKind\getaspect.pl
 pad=notepad $*
 npp="%ProgramFiles(x86)%\Notepad++\notepad++.exe" $*
-scp="C:\Program Files\PuTTY\pscp.exe" $*
 puta="C:\Program Files\PuTTY\putty.exe" $*
 compmgmt=compmgmt.msc
 sysdm=sysdm.cpl
@@ -149,6 +148,7 @@ tto   =pushd c:\t2k\lms\OfficeAutomation
 ph    =pushd c:\puzzle\$*
 nl    =pushd c:\puzzle\netline\$*
 so    =pushd c:\rlm\seaotter\$*
+kf    =pushd c:\rlm\seaotter\KelpForest\$*
 
 
 sdkdir=pushd "%ProgramFiles%\Microsoft SDKs\Windows\v7.1\$*"
