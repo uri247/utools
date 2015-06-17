@@ -73,6 +73,7 @@ gg="%ProgramFiles(x86)%\Git\bin\wish.exe" "%ProgramFiles(x86)%\Git\libexec\git-c
 ssms="C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\Ssms.exe"
 msbld="%ProgramFiles(x86)%\MSBuild\12.0\Bin\amd64\MSBuild.exe" $*
 bldtt=c:\PROGRA~2\MSBuild\12.0\Bin\amd64\MSBuild.exe /t:Build /p:Configuration=Debug lima.tictool.sln
+glog=git log --oneline -20 $*
 
 bash=bash.exe --login -i
 
@@ -148,6 +149,10 @@ tto   =pushd c:\t2k\lms\OfficeAutomation
 ph    =pushd c:\puzzle\$*
 nl    =pushd c:\puzzle\netline\$*
 so    =pushd %SO_HOME%\$*
+kf    =pushd %SO_HOME%\KelpForest\$*
+gng   =pushd %GINGER_HOME%\vs12
+gc    =pushd %GINGER_HOME%\gc
+
 
 
 sdkdir=pushd "%ProgramFiles%\Microsoft SDKs\Windows\v7.1\$*"
