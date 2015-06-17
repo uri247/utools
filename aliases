@@ -154,7 +154,6 @@ gng   =pushd %GINGER_HOME%\vs12
 gc    =pushd %GINGER_HOME%\gc
 
 
-
 sdkdir=pushd "%ProgramFiles%\Microsoft SDKs\Windows\v7.1\$*"
 kitdir=pushd "%ProgramFiles(x86)%\Windows Kits\8.1\$*"
 vcdir =pushd "%ProgramFiles(x86)%\Microsoft Visual Studio 12.0\VC\$*"
