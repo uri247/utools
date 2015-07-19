@@ -35,6 +35,7 @@ known_shows = [
     'The.Good.Wife',
     'The.Leftovers',
     'The.Voice',
+    'UnReal',
     'Veep',
     ]
 
