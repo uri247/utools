@@ -6,7 +6,7 @@ vihosts=vim C:\Windows\System32\drivers\etc\hosts
 
 ll   =dir $*
 ls   =dir $*
-g     =findstr $*
+g     =grep $*
 pg    =perl -ne "print qq($.: $_) if /$1/" $2
 #grep =c:\usr\MinGW\msys\1.0\bin\grep.exe $*
 
@@ -19,8 +19,8 @@ kpy  =taskkill /f /im python.exe & taskkill /f /im pythonw.exe
 tl   =tasklist $*
 tk   =taskkill $*
 
-adddbg32=set path=%path%;c:\Program Files (x86)\Windows Kits\8.1\Debuggers\x86
-adddbg64=set path=%path%;c:\Program Files\Debugging Tools for Windows (x64)
+adddbg32=set path=%path%;c:\Program Files (x86)\Windows Kits\10\Debuggers\x86
+adddbg64=set path=%path%;c:\Program Files (x86)\Windows Kits\10\Debuggers\x64
 wbg  =windbg.exe $*
 wbgww12=windbg "%ProgramFiles(x86)%\Microsoft Office\Office12\WINWORD.EXE" $*
 wbgxl12=windbg "%ProgramFiles(x86)%\Microsoft Office\Office12\EXCEL.EXE" $*
@@ -37,7 +37,7 @@ wbgie=windbg "%ProgramFiles(x86)%\Internet Explorer\iexplore.exe" $*
 wbgrdr=windbg "%ProgramFiles(x86)%\Adobe\Reader 11.0\Reader\AcroRd32.exe"
 wbgdev8=windbg -k net:port=50000,key=1.1.1.1
 kdbg=windbg -k net:port=50000,key=1.2.3.4 $*
-symc=symchk /s srv*c:\local\symbols*http://msdl.microsoft.com/download/symbols /op /oi /od /ob /os $*
+symc=symchk /s srv*c:\local\symbols*http://msdl.microsoft.com/download/symbols /od /ob /os $*
 
 
 apps="c:\lib\google_appengine\dev_appserver.py" . $*
