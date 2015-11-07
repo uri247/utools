@@ -22,7 +22,7 @@ known_shows = [
     'Modern.Family',
     'Nashville.2012',
     'Nurse.Jackie',
-    'Orange.Is.The.New.Black',
+    'Orange.is.the.New.Black',
     'Orphan.Black',
     'Outlander',
     'Parks.and.Recreation',
