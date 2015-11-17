@@ -122,6 +122,7 @@ uppp  =pushd ..\..\..\$*
 upppp =pushd ..\..\..\..\$*
 dbox  =pushd "%_ush_dboxfldr%"
 bt    =pushd "%_ush_dboxfldr%\bt"
+msh   =pushd "%_ush_dboxfldr%\Media.Share"
 wirm  =pushd c:\confidela\SDClient\WindowsPlugin\$*
 adata =pushd %APPDATA%\$*
 ldata =pushd %LOCALAPPDATA%\$*
