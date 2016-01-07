@@ -1,14 +1,37 @@
 import json
 import os
 
-fn = r'%s\AppData\Roaming\Dropbox\info.json' % os.environ['UserProfile']
 
-if os.path.isfile(fn):
-    with open(fn) as f:
-        d = json.load(f)
-    dbox_fldr = d['personal']['path']
+def old_method():
+    try:
+        fn = os.path.join(os.environ['APPDATA'], 'Dropbox', 'info.json')
+        with open(fn) as f:
+            d = json.load(f)
+        return d['personal']['path']
+    except IOError:
+        return None
 
-else:
-    dbox_fldr = 'no dropbox'
 
-print dbox_fldr
+def new_method():
+    fn = os.path.join(os.environ['LOCALAPPDATA'], 'Dropbox', 'host.db')
+    with open(fn, 'r') as f:
+        data = f.read()
+    return data.split()[1].decode('base64')
+
+
+def main():
+    dbox_folder = None
+
+    if dbox_folder is None:
+        dbox_folder = old_method()
+
+    if dbox_folder is None:
+        dbox_folder = new_method()
+
+    if dbox_folder is None:
+        dbox_folder = 'no dropbox'
+
+    print dbox_folder
+
+if __name__ == '__main__':
+    main()
