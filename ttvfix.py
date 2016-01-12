@@ -36,6 +36,7 @@ known_shows = [
     'The.Good.Wife',
     'The.Leftovers',
     'The.Voice',
+    'Transparent',
     'UnReal',
     'Veep',
     ]
@@ -68,9 +69,10 @@ def my_rename(src, target):
 
 g = glob.glob('*.mp4') + glob.glob('*.avi')
 for file_name in g:
-    result = re.match(r'(.+)\.(S\d\dE\d\d)(\..*)?\.(mp4|avi)', file_name)
+    result = re.match(r'(.+)\.([Ss]\d\d[Ee]\d\d)(\..*)?\.(mp4|avi)', file_name)
     if result:
         series, episode, _, ext = result.groups()
+        episode = episode.upper()
         if series in known_shows:
             target_name = '%s.%s.%s' % (series, episode, ext)
             my_rename(file_name, target_name)
