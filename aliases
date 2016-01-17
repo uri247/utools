@@ -74,6 +74,7 @@ ssms="C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudi
 msbld="%ProgramFiles(x86)%\MSBuild\12.0\Bin\amd64\MSBuild.exe" $*
 bldtt=c:\PROGRA~2\MSBuild\12.0\Bin\amd64\MSBuild.exe /t:Build /p:Configuration=Debug lima.tictool.sln
 glog=git log --oneline -20 $*
+qotd=telnet cygnus-x.net 17
 
 bash=bash.exe --login -i
 

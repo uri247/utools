@@ -20,6 +20,7 @@ known_shows = [
     'Louie',
     'Mad.Men',
     'Modern.Family',
+    'Mozart.In.The.Jungle',
     'Nashville.2012',
     'Nurse.Jackie',
     'Orange.is.the.New.Black',
@@ -67,9 +68,9 @@ def my_rename(src, target):
             print 'ERROR:', x
 
 
-g = glob.glob('*.mp4') + glob.glob('*.avi')
+g = glob.glob('*.mp4') + glob.glob('*.avi') + glob.glob('*.mkv')
 for file_name in g:
-    result = re.match(r'(.+)\.([Ss]\d\d[Ee]\d\d)(\..*)?\.(mp4|avi)', file_name)
+    result = re.match(r'(.+)\.([Ss]\d\d[Ee]\d\d)(\..*)?\.(mp4|avi|mkv)', file_name)
     if result:
         series, episode, _, ext = result.groups()
         episode = episode.upper()
