@@ -6,6 +6,7 @@ import re
 known_shows = [
     '24',
     'Ali.G.Rezurection',
+    'Billions',
     'Californication',
     'Cosmos.A.Space.Time.Odyssey',
     'Derek',
@@ -37,6 +38,7 @@ known_shows = [
     'The.Good.Wife',
     'The.Leftovers',
     'The.Voice',
+    'The.X-Files',
     'Transparent',
     'UnReal',
     'Veep',

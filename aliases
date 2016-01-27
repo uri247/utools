@@ -38,6 +38,7 @@ wbgrdr=windbg "%ProgramFiles(x86)%\Adobe\Reader 11.0\Reader\AcroRd32.exe"
 wbgdev8=windbg -k net:port=50000,key=1.1.1.1
 kdbg=windbg -k net:port=50000,key=1.2.3.4 $*
 symc=symchk /s srv*c:\local\symbols*http://msdl.microsoft.com/download/symbols /od /ob /os $*
+rlmdb=mysql --host=urix --user=kfadmin --password=forestJump --database=rlm
 
 
 apps="c:\lib\google_appengine\dev_appserver.py" . $*
@@ -75,6 +76,7 @@ msbld="%ProgramFiles(x86)%\MSBuild\12.0\Bin\amd64\MSBuild.exe" $*
 bldtt=c:\PROGRA~2\MSBuild\12.0\Bin\amd64\MSBuild.exe /t:Build /p:Configuration=Debug lima.tictool.sln
 glog=git log --oneline -20 $*
 qotd=telnet cygnus-x.net 17
+pyut=python -m unittest $*
 
 bash=bash.exe --login -i
 
