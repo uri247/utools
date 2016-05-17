@@ -6,6 +6,7 @@ import re
 known_shows = [
     '24',
     'Ali.G.Rezurection',
+    'Better.Call.Saul',
     'Billions',
     'Californication',
     'Cosmos.A.Space.Time.Odyssey',
@@ -16,6 +17,8 @@ known_shows = [
     'Game.of.Thrones',
     'Greys.Anatomy',
     'Homeland',
+    'Horace.and.Pete',
+    'House.of.Cards.2013',
     'Inside.Amy.Schumer',
     'Last.Week.Tonight.With.John.Oliver',
     'Louie',
@@ -33,7 +36,10 @@ known_shows = [
     'Scandal.US',
     'Shameless.US',
     'The.Affair',
+    'The.Americans.2013',
+    'The.Catch.US',
     'The.Comedians.US',
+    'The.Girlfriend.Experience',
     'The.Goldbergs.2013',
     'The.Good.Wife',
     'The.Leftovers',
@@ -42,6 +48,7 @@ known_shows = [
     'Transparent',
     'UnReal',
     'Veep',
+    'Vinyl',
     ]
 
 known_talkshow = [
