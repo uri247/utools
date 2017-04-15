@@ -15,6 +15,7 @@ known_shows = [
     'Episodes',
     'Extant',
     'Fargo',
+    'Feud',
     'Full.Frontal.With.Samantha.Bee',
     'Game.of.Thrones',
     'Greys.Anatomy',

@@ -39,6 +39,7 @@ wbgdev8=windbg -k net:port=50000,key=1.1.1.1
 kdbg=windbg -k net:port=50000,key=1.2.3.4 $*
 symc=symchk /s srv*%_NT_SYMBOL_PATH%*http://msdl.microsoft.com/download/symbols /od /ob /os $*
 rlmdb=mysql --host=urix --user=kfadmin --password=forestJump --database=rlm $*
+cmake=c:\usr\cmake-3.8.0-win64-x64\bin\cmake.exe $*
 
 
 apps="c:\lib\google_appengine\dev_appserver.py" . $*
