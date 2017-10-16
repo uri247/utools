@@ -1,4 +1,4 @@
-@echo off
+@if %_echo%. == . @echo off
 rem 
 rem  USH.CMD - Uri's Shell
 rem 
