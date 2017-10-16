@@ -39,7 +39,6 @@ wbgdev8=windbg -k net:port=50000,key=1.1.1.1
 kdbg=windbg -k net:port=50000,key=1.2.3.4 $*
 symc=symchk /s srv*%_NT_SYMBOL_PATH%*http://msdl.microsoft.com/download/symbols /od /ob /os $*
 rlmdb=mysql --host=urix --user=kfadmin --password=forestJump --database=rlm $*
-cmake=c:\usr\cmake-3.8.0-win64-x64\bin\cmake.exe $*
 
 
 apps="c:\lib\google_appengine\dev_appserver.py" . $*
@@ -79,6 +78,7 @@ bldtt=c:\PROGRA~2\MSBuild\12.0\Bin\amd64\MSBuild.exe /t:Build /p:Configuration=D
 glog=git log --oneline -20 $*
 qotd=telnet cygnus-x.net 17
 pyut=python -m unittest $*
+devenv="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe" $*
 
 bash=bash.exe --login -i
 
