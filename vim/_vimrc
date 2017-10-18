@@ -1,0 +1,13 @@
+" vim run command script
+" On Windows, create a link to this file from home folder. On elevated shell:
+"
+"     C:\> cd %UserProfile%
+"     C:\Users\uri> mklink _vimrc c:\usr\utools\vim\_vimrc
+"     symbolic link created for _vimrc <<===>> c:\usr\utools\vim\_vimrc
+
+set nobackup
+
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set expandtab
