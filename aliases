@@ -160,6 +160,7 @@ so    =pushd %SO_HOME%\$*
 kf    =pushd %SO_HOME%\KelpForest\$*
 gng   =pushd %GINGER_HOME%\vs12
 gc    =pushd %GINGER_HOME%\gc
+ix    =pushd c:\ix\ixsrv\$*
 
 
 sdkdir=pushd "%ProgramFiles%\Microsoft SDKs\Windows\v7.1\$*"
