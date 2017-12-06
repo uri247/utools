@@ -1,22 +1,22 @@
-import _winreg
+import winreg
 import tempfile
 import sys
 import os
-from Tkinter import Tk
+from tkinter import Tk
 
 #
 # read path value from registry
 #
 pathpath = r"SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment"
-key = _winreg.OpenKey( _winreg.HKEY_LOCAL_MACHINE, pathpath )
-path = _winreg.QueryValueEx( key, "Path" )[0]
+key = winreg.OpenKey( winreg.HKEY_LOCAL_MACHINE, pathpath )
+path = winreg.QueryValueEx( key, "Path" )[0]
 fldrs = path.split(';')
 
 #
 # echo to the user
 #
 for fldr in fldrs:
-    print fldr
+    print(fldr)
 
 #
 # write to temp file
@@ -38,9 +38,9 @@ os.system( 'notepad ' + fname )
 #
 f = open( fname, 'r' )
 fldrs = f.read().splitlines()
-print
+print()
 for fldr in fldrs:
-    print fldr
+    print(fldr)
 
 #
 # copy to clipboard using Tk

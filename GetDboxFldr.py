@@ -1,5 +1,6 @@
 import json
 import os
+import base64
 
 
 def old_method():
@@ -16,7 +17,9 @@ def new_method():
     fn = os.path.join(os.environ['LOCALAPPDATA'], 'Dropbox', 'host.db')
     with open(fn, 'r') as f:
         data = f.read()
-    return data.split()[1].decode('base64')
+    dir_encoded = data.split()[1]
+    dir = base64.b64decode(dir_encoded).decode('utf-8')
+    return dir
 
 
 def main():
@@ -31,7 +34,7 @@ def main():
     if dbox_folder is None:
         dbox_folder = 'no dropbox'
 
-    print dbox_folder
+    print(dbox_folder)
 
 if __name__ == '__main__':
     main()
