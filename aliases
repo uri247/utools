@@ -160,7 +160,7 @@ so    =pushd %SO_HOME%\$*
 kf    =pushd %SO_HOME%\KelpForest\$*
 gng   =pushd %GINGER_HOME%\vs12
 gc    =pushd %GINGER_HOME%\gc
-ix    =pushd c:\ix\ixsrv\$*
+ix    =pushd d:\ix\ixsrv\$*
 
 
 sdkdir=pushd "%ProgramFiles%\Microsoft SDKs\Windows\v7.1\$*"
@@ -175,5 +175,7 @@ fixrout     =route add 172.16.24.0 mask 255.255.248.0 172.16.0.22 IF $*
 pedir =perl -e "{for (<*>) {print qq($_\n);} }"
 pefwinfo=dir /s /b info.txt | perl -ne "/(?<=\\)[^\\]*(?=\\info.txt)/; print qq($&\n)"
 detab =perl -pe '1 while s/\t/" "x(4-($-[0]%4))/e' $*
+
+jet   =java -jar %JETTY_HOME%\start.jar
 
 
