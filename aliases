@@ -4,8 +4,7 @@ als  =%EDITOR% c:\usr\utools\aliases && doskey /macrofile=c:\usr\utools\aliases
 showals=doskey /macros | findstr "^$1="
 vihosts=vim C:\Windows\System32\drivers\etc\hosts
 
-ll   =dir $*
-ls   =dir $*
+ll    =ls -l $*
 g     =grep $*
 pg    =perl -ne "print qq($.: $_) if /$1/" $2
 #grep =c:\usr\MinGW\msys\1.0\bin\grep.exe $*
@@ -161,6 +160,7 @@ kf    =pushd %SO_HOME%\KelpForest\$*
 gng   =pushd %GINGER_HOME%\vs12
 gc    =pushd %GINGER_HOME%\gc
 ix    =pushd d:\ix\ixsrv\$*
+fr    =pushd d:\ix\fridge\$*
 
 
 sdkdir=pushd "%ProgramFiles%\Microsoft SDKs\Windows\v7.1\$*"
@@ -178,4 +178,5 @@ detab =perl -pe '1 while s/\t/" "x(4-($-[0]%4))/e' $*
 
 jet   =java -jar %JETTY_HOME%\start.jar
 
+tdmake =cmake -DCMAKE_TOOLCHAIN_FILE=d:\src\vcpkg\scripts\buildsystems\vcpkg.cmake -G "Visual Studio 15 2017 Win64" $*
 
