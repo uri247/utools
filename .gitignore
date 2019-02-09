@@ -3,3 +3,7 @@
 *.pyc
 workspace.xml
 
+
+#symbolic links
+ttvfix.py
+vi.exe

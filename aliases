@@ -1,47 +1,23 @@
 
-vi   =vim $*
 als  =%EDITOR% c:\usr\utools\aliases && doskey /macrofile=c:\usr\utools\aliases
 showals=doskey /macros | findstr "^$1="
-vihosts=vim C:\Windows\System32\drivers\etc\hosts
+vihosts=%EDITOR% C:\Windows\System32\drivers\etc\hosts
 
 ll    =ls -l $*
 g     =grep $*
 pg    =perl -ne "print qq($.: $_) if /$1/" $2
-#grep =c:\usr\MinGW\msys\1.0\bin\grep.exe $*
 
-
-keng =for %a in (WatchDoxWatchDog WatchDoxEngine WDServiceStarter_32 WDServiceStarter_64) do @taskkill /f /im %a.exe
-koff =for %o in (outlook winword excel powerpnt) do @taskkill /f /im %o.exe
-kie  =taskkill /f /im iexplore.exe
-kitu =taskkill /f /im itunes.exe
-kpy  =taskkill /f /im python.exe & taskkill /f /im pythonw.exe
 tl   =tasklist $*
 tk   =taskkill $*
 
 adddbg32=set path=%path%;c:\Program Files (x86)\Windows Kits\10\Debuggers\x86
 adddbg64=set path=%path%;c:\Program Files (x86)\Windows Kits\10\Debuggers\x64
 wbg  =windbg.exe $*
-wbgww12=windbg "%ProgramFiles(x86)%\Microsoft Office\Office12\WINWORD.EXE" $*
-wbgxl12=windbg "%ProgramFiles(x86)%\Microsoft Office\Office12\EXCEL.EXE" $*
-wbgpp12=windbg "%ProgramFiles(x86)%\Microsoft Office\Office12\POWERPNT.EXE" $*
-wbgol14=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\OUTLOOK.EXE" $*
-wbgww14=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\WINWORD.EXE" $*
-wbgxl14=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\EXCEL.EXE" $*
-wbgpp14=windbg "%ProgramFiles(x86)%\Microsoft Office\Office14\POWERPNT.EXE" $*
-wbgol15=windbg "%ProgramFiles(x86)%\Microsoft Office\Office15\OUTLOOK.EXE" $*
-wbgww15=windbg "%ProgramFiles(x86)%\Microsoft Office\Office15\WINWORD.EXE" $*
-wbgxl15=windbg "%ProgramFiles(x86)%\Microsoft Office\Office15\EXCEL.EXE" $*
-wbgpp15=windbg "%ProgramFiles(x86)%\Microsoft Office\Office15\POWERPNT.EXE" $*
-wbgie=windbg "%ProgramFiles(x86)%\Internet Explorer\iexplore.exe" $*
-wbgrdr=windbg "%ProgramFiles(x86)%\Adobe\Reader 11.0\Reader\AcroRd32.exe"
-wbgdev8=windbg -k net:port=50000,key=1.1.1.1
 kdbg=windbg -k net:port=50000,key=1.2.3.4 $*
 symc=symchk /s srv*%_NT_SYMBOL_PATH%*http://msdl.microsoft.com/download/symbols /od /ob /os $*
 rlmdb=mysql --host=urix --user=kfadmin --password=forestJump --database=rlm $*
 
-
 apps="c:\lib\google_appengine\dev_appserver.py" . $*
-gsu=python c:\usr\gsutil\gsutil $*
 splitpath=path | perl -ne "{print join qq(\n), split ';'}"
 dellog=del %APPDATA%\WatchDox\*.log && del %APPDATA%\WatchDox\*.ldecoded
 dlog=c:\watchdox\trunk\WindowsPlugin\Debug\Log.Decoder.exe $* -s
@@ -58,7 +34,6 @@ hh="C:\Program Files (x86)\Microsoft Help Viewer\v2.1\HlpViewer.exe" /catalogNam
 ssv=c:\usr\SSView\SSView.exe $*
 eclipse=C:\usr\eclipse\eclipse.exe
 ga=%URI_HOME%\cut\PerlGames\AllKind\getaspect.pl
-pad=notepad $*
 npp="%ProgramFiles(x86)%\Notepad++\notepad++.exe" $*
 puta="C:\Program Files\PuTTY\putty.exe" $*
 compmgmt=compmgmt.msc
@@ -75,47 +50,26 @@ bldtt=c:\PROGRA~2\MSBuild\12.0\Bin\amd64\MSBuild.exe /t:Build /p:Configuration=D
 glog=git log --oneline -20 $*
 qotd=telnet cygnus-x.net 17
 pyut=python -m unittest $*
+gr=.\gradlew $*
+ll=ls -l $*
+clear=cls
 
 devenv="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe" $*
 devsh="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsDevCmd.bat"
 
 bash=bash.exe --login -i
 
-luchrome=runas /u:%COMPUTERNAME%\localuri "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"
 wd="c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\WinDiff.Exe" $*
 bc     ="%ProgramFiles(x86)%\Beyond Compare 3\BCompare.exe" $*
 chrome="%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"
 luchrome=runas /u:%COMPUTERNAME%\localuri "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"
 
-glz  ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://radio.glz.co.il:8000/galatz
-gglz ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://radio.glz.co.il:8000/galgalatz
-kolm ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open mms://s4awm.castup.net/990310008-52.wmv
-88fm ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open mms://s4bwm.castup.net/990310006-52.wmv
-gimel="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open mms://s4awm.castup.net/990310004-52.wmv
-99fm ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open mms://194.90.203.111/99fm
-wqxr ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://wnyc-wqxr-ice.streamguys.com:80/wqxr
-wfmu ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://stream0.wfmu.org/freeform-128k.mp3
-kexp ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open mms://media-wm.cac.washington.edu/KEXP-Live
-tvop ="%ProgramFiles%\Windows Media Player\wmplayer.exe" /prefetch:1 /open http://uk2-vn.mixstream.net:8004
-prdz ="%ProgramFiles%\windows Media Player\wmplayer.exe" /prefetch:1 /open http://scfire-f10.websys.aol.com:80/radio_paradise_mp3_128kbps
 
-
-
-ie   ="%ProgramFiles(x86)%\Internet Explorer\iexplore.exe" $*
-ww12 ="%ProgramFiles(x86)%\Microsoft Office\Office12\WINWORD.EXE" $*
-xl12 ="%ProgramFiles(x86)%\Microsoft Office\Office12\EXCEL.EXE" $*
-pp12 ="%ProgramFiles(x86)%\Microsoft Office\Office12\POWERPNT.EXE" $*
-ol14   ="%ProgramFiles(x86)%\Microsoft Office\Office14\OUTLOOK.EXE" $*
-ww14   ="%ProgramFiles(x86)%\Microsoft Office\Office14\WINWORD.EXE" $*
-xl14   ="%ProgramFiles(x86)%\Microsoft Office\Office14\EXCEL.EXE" $*
-pp14   ="%ProgramFiles(x86)%\Microsoft Office\Office14\POWERPNT.EXE" $*
-ol15   ="%ProgramFiles(x86)%\Microsoft Office\Office15\OUTLOOK.EXE" $*
-ww15   ="%ProgramFiles(x86)%\Microsoft Office\Office15\WINWORD.EXE" $*
-xl15   ="%ProgramFiles(x86)%\Microsoft Office\Office15\EXCEL.EXE" $*
-pp15   ="%ProgramFiles(x86)%\Microsoft Office\Office15\POWERPNT.EXE" $*
-
-
-
+ie   ="%ProgramFiles%\Internet Explorer\iexplore.exe" $*
+ww   ="%ProgramFiles%\Microsoft Office\root\Office16\WINWORD.EXE" $*
+xl   ="%ProgramFiles%\Microsoft Office\root\Office16\EXCEL.EXE" $*
+pp   ="%ProgramFiles%\Microsoft Office\root\Office16\POWERPNT.EXE" $*
+ol   ="%ProgramFiles%\Microsoft Office\root\Office16\OUTLOOK.EXE" $*
 
 cd    =pushd $*
 e     =popd $*
@@ -153,14 +107,8 @@ sia   =pushd c:\IntelScs\sia\$*
 tmp   =pushd %tmp%
 cdn   =pushd c:\t2k\lms\cdn
 tto   =pushd c:\t2k\lms\OfficeAutomation
-ph    =pushd c:\puzzle\$*
-nl    =pushd c:\puzzle\netline\$*
-so    =pushd %SO_HOME%\$*
-kf    =pushd %SO_HOME%\KelpForest\$*
-gng   =pushd %GINGER_HOME%\vs12
-gc    =pushd %GINGER_HOME%\gc
-ix    =pushd d:\ix\ixsrv\$*
-fr    =pushd d:\ix\fridge\$*
+ix    =pushd c:\ix\ixsrv\$*
+fr    =pushd c:\ix\fridge\fridge\$*
 
 
 sdkdir=pushd "%ProgramFiles%\Microsoft SDKs\Windows\v7.1\$*"

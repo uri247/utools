@@ -1,0 +1,9 @@
+
+C:\usr\utools
+----------
+ttvfix.py           c:\uri\cut\PyGames\ttvfix.py
+vi.exe              c:\Program Files (x86)\Vim\vim81\vim.exe
+
+C:\users\uri
+----------
+_vimrc              c:\usr\utools\vim\_vimrc
