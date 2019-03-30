@@ -110,8 +110,8 @@ tmp   =pushd %tmp%
 cdn   =pushd c:\t2k\lms\cdn
 tto   =pushd c:\t2k\lms\OfficeAutomation
 ix    =pushd %IX_HOME%\ixsrv\$*
-fr    =pushd c:\ix\fridge\fridge\$*
-mrch  =pushd c:\ix\fridge\merchant
+fr    =pushd %IX_HOME%\fridge\fridge\$*
+mrch  =pushd %IX_HOME%\fridge\merchant
 
 
 sdkdir=pushd "%ProgramFiles%\Microsoft SDKs\Windows\v7.1\$*"
