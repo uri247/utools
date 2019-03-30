@@ -109,7 +109,7 @@ sia   =pushd c:\IntelScs\sia\$*
 tmp   =pushd %tmp%
 cdn   =pushd c:\t2k\lms\cdn
 tto   =pushd c:\t2k\lms\OfficeAutomation
-ix    =pushd c:\ix\ixsrv\$*
+ix    =pushd %IX_HOME%\ixsrv\$*
 fr    =pushd c:\ix\fridge\fridge\$*
 mrch  =pushd c:\ix\fridge\merchant
 
