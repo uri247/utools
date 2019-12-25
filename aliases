@@ -51,6 +51,7 @@ glog=git log --oneline -20 $*
 qotd=telnet cygnus-x.net 17
 pyut=python -m unittest $*
 ixenv=c:\local\virtualenvs\ix\scripts\activate
+playenv=c:\local\virtualenvs\play\scripts\activate
 gr=.\gradlew $*
 ll=ls -l $*
 clear=cls
@@ -113,7 +114,7 @@ ix    =pushd %IX_HOME%\ixsrv\$*
 fr    =pushd %IX_HOME%\fridge\fridge\$*
 mrch  =pushd %IX_HOME%\fridge\merchant
 ace   =pushd %IX_HOME%\ace\IXDen-Agent
-
+depu  =pushd %IX_HOME%\deputy
 
 sdkdir=pushd "%ProgramFiles%\Microsoft SDKs\Windows\v7.1\$*"
 kitdir=pushd "%ProgramFiles(x86)%\Windows Kits\8.1\$*"
