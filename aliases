@@ -57,7 +57,7 @@ ll=ls -l $*
 clear=cls
 
 devenv="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe" $*
-devsh="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsDevCmd.bat"
+devsh="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\VsDevCmd.bat"
 
 bash=bash.exe --login -i
 
@@ -110,7 +110,8 @@ sia   =pushd c:\IntelScs\sia\$*
 tmp   =pushd %tmp%
 cdn   =pushd c:\t2k\lms\cdn
 tto   =pushd c:\t2k\lms\OfficeAutomation
-ix    =pushd %IX_HOME%\ixsrv\$*
+ix    =pushd %IX_HOME%\$*
+ixsrv =pushd %IX_HOME%\ixsrv\$*
 fr    =pushd %IX_HOME%\fridge\fridge\$*
 mrch  =pushd %IX_HOME%\fridge\merchant
 ace   =pushd %IX_HOME%\ace\IXDen-Agent
