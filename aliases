@@ -52,6 +52,7 @@ qotd=telnet cygnus-x.net 17
 pyut=python -m unittest $*
 ixenv=%UserProfile%\virtualenvs\ix\scripts\activate
 playenv=c:\local\virtualenvs\play\scripts\activate
+cutenv=c:\local\virtualenvs\cut\scripts\activate
 gr=.\gradlew $*
 ll=ls -l $*
 clear=cls
