@@ -11,3 +11,4 @@ ipython
 jupyter
 jupyterlab
 openpyxl
+xlrd
