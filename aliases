@@ -58,7 +58,6 @@ ll=ls -l $*
 clear=cls
 sshix=ssh -i c:\Dropbox\IXDen\ix-den\KeyStore\ssh\ubuntu@aws.amazon.com\id_rsa $*
 
-devenv="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe" $*
 devsh="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\VsDevCmd.bat"
 
 bash=bash.exe --login -i
