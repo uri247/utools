@@ -28,7 +28,7 @@ rem
 
 
 :dbox
-    for /f "delims=" %%x in ('GetDboxFldr.py') do set _ush_dboxfldr=%%x
+    for /f "delims=" %%x in ('python %~dp0GetDboxFldr.py') do set _ush_dboxfldr=%%x
 
 
 :aliases

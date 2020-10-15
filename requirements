@@ -1,0 +1,14 @@
+# Requirements file for Uri's python
+pylint
+typing
+numpy
+scipy
+pandas
+statsmodels
+matplotlib
+requests
+ipython
+jupyter
+jupyterlab
+openpyxl
+xlrd

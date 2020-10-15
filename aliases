@@ -52,18 +52,20 @@ qotd=telnet cygnus-x.net 17
 pyut=python -m unittest $*
 ixenv=c:\local\virtualenvs\ix\scripts\activate
 playenv=c:\local\virtualenvs\play\scripts\activate
+cutenv=c:\local\virtualenvs\cut\scripts\activate
 gr=.\gradlew $*
 ll=ls -l $*
 clear=cls
+sshix=ssh -i c:\Dropbox\IXDen\ix-den\KeyStore\ssh\ubuntu@aws.amazon.com\id_rsa $*
 
-devenv="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe" $*
-devsh="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsDevCmd.bat"
+devsh="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\VsDevCmd.bat"
 
 bash=bash.exe --login -i
 
 wd="c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\WinDiff.Exe" $*
 bc     ="%ProgramFiles(x86)%\Beyond Compare 3\BCompare.exe" $*
 chrome  ="%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe" $*
+uchrm   ="%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe" --user-data-dir=C:\Users\uri\chrm
 lmchrome="%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe" --profile-directory=lonemoon $*
 ikchrome="%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe" --profile-directory=ikid $*
 
@@ -111,6 +113,7 @@ tmp   =pushd %tmp%
 cdn   =pushd c:\t2k\lms\cdn
 tto   =pushd c:\t2k\lms\OfficeAutomation
 ix    =pushd %IX_HOME%\$*
+ixsrv =pushd %IX_HOME%\ixsrv\$*
 fr    =pushd %IX_HOME%\fridge\fridge\$*
 mrch  =pushd %IX_HOME%\fridge\merchant
 ace   =pushd %IX_HOME%\ace\IXDen-Agent

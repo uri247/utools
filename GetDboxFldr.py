@@ -14,12 +14,15 @@ def old_method():
 
 
 def new_method():
-    fn = os.path.join(os.environ['LOCALAPPDATA'], 'Dropbox', 'host.db')
-    with open(fn, 'r') as f:
-        data = f.read()
-    dir_encoded = data.split()[1]
-    dir = base64.b64decode(dir_encoded).decode('utf-8')
-    return dir
+    try:
+        fn = os.path.join(os.environ['LOCALAPPDATA'], 'Dropbox', 'host.db')
+        with open(fn, 'r') as f:
+            data = f.read()
+        dir_encoded = data.split()[1]
+        dir = base64.b64decode(dir_encoded).decode('utf-8')
+        return dir
+    except FileNotFoundError:
+        return None
 
 
 def main():
