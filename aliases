@@ -51,7 +51,7 @@ glog=git log --oneline -20 $*
 qotd=telnet cygnus-x.net 17
 pyut=python -m unittest $*
 ixenv=%UserProfile%\virtualenvs\ix\scripts\activate
-playenv=c:\local\virtualenvs\play\scripts\activate
+cutenv=%UserProfile%\virtualenvs\cut\scripts\activate
 gr=.\gradlew $*
 ll=ls -l $*
 clear=cls
@@ -63,7 +63,7 @@ bash=bash.exe --login -i
 
 wd="c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\WinDiff.Exe" $*
 bc     ="%ProgramFiles(x86)%\Beyond Compare 3\BCompare.exe" $*
-chrome  ="%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe" $*
+chrm    ="%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe" $*
 uchrm   ="%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe" --user-data-dir=C:\Users\uri\chrm
 lmchrome="%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe" --profile-directory=lonemoon $*
 ikchrome="%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe" --profile-directory=ikid $*
