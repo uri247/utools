@@ -55,8 +55,8 @@ cutenv=%UserProfile%\virtualenvs\cut\scripts\activate
 gr=.\gradlew $*
 ll=ls -l $*
 clear=cls
+sshix=ssh -i c:\Dropbox\IXDen\ix-den\KeyStore\ssh\ubuntu@aws.amazon.com\id_rsa $*
 
-devenv="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe" $*
 devsh="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\VsDevCmd.bat"
 
 bash=bash.exe --login -i
@@ -116,7 +116,7 @@ ixsrv =pushd %IX_HOME%\ixsrv\$*
 fr    =pushd %IX_HOME%\fridge\fridge\$*
 mrch  =pushd %IX_HOME%\fridge\merchant
 ace   =pushd %IX_HOME%\ace\IXDen-Agent
-depu  =pushd %IX_HOME%\deputy
+dpsrc =pushd %IX_HOME%\deputy
 
 sdkdir=pushd "%ProgramFiles%\Microsoft SDKs\Windows\v7.1\$*"
 kitdir=pushd "%ProgramFiles(x86)%\Windows Kits\8.1\$*"
