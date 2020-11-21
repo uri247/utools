@@ -93,6 +93,7 @@ ldata =pushd %LOCALAPPDATA%\$*
 wdata =pushd %APPDATA%\WatchDox
 h     =pushd %UserProfile%\$*
 home  =pushd %UserProfile%\$*
+blds  =pushd %UserProfile%\blds
 dl    =pushd %UserProfile%\downloads
 myd   =pushd %UserProfile%\Documents
 skyd  =pushd %UserProfile%\SkyDrive\$*
@@ -113,10 +114,9 @@ cdn   =pushd c:\t2k\lms\cdn
 tto   =pushd c:\t2k\lms\OfficeAutomation
 ix    =pushd %IX_HOME%\$*
 ixsrv =pushd %IX_HOME%\ixsrv\$*
-fr    =pushd %IX_HOME%\fridge\fridge\$*
-mrch  =pushd %IX_HOME%\fridge\merchant
-ace   =pushd %IX_HOME%\ace\IXDen-Agent
-dpsrc =pushd %IX_HOME%\deputy
+pz    =pushd %UserProfile%\pz\$*
+pzbld =pushd %UserProfile%\blds\pz\$*
+
 
 sdkdir=pushd "%ProgramFiles%\Microsoft SDKs\Windows\v7.1\$*"
 kitdir=pushd "%ProgramFiles(x86)%\Windows Kits\8.1\$*"
