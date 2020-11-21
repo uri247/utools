@@ -59,14 +59,12 @@ sshix=ssh -i c:\Dropbox\IXDen\ix-den\KeyStore\ssh\ubuntu@aws.amazon.com\id_rsa $
 
 devsh="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\VsDevCmd.bat"
 
-bash=bash.exe --login -i
+bash=c:\usr\cygwin64\bin\bash.exe --login -i
 
 wd="c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\WinDiff.Exe" $*
 bc     ="%ProgramFiles(x86)%\Beyond Compare 3\BCompare.exe" $*
-chrm    ="%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe" $*
-uchrm   ="%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe" --user-data-dir=C:\Users\uri\chrm
-lmchrome="%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe" --profile-directory=lonemoon $*
-ikchrome="%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe" --profile-directory=ikid $*
+chrm    ="%ProgramFiles%\Google\Chrome\Application\chrome.exe" $*
+uchrm   ="%ProgramFiles%\Google\Chrome\Application\chrome.exe" --user-data-dir=C:\Users\uri\chrm
 
 
 ie   ="%ProgramFiles%\Internet Explorer\iexplore.exe" $*
