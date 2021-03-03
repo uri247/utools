@@ -50,8 +50,9 @@ bldtt=c:\PROGRA~2\MSBuild\12.0\Bin\amd64\MSBuild.exe /t:Build /p:Configuration=D
 glog=git log --oneline -20 $*
 qotd=telnet cygnus-x.net 17
 pyut=python -m unittest $*
-ixenv=%UserProfile%\virtualenvs\ix\scripts\activate
 cutenv=%UserProfile%\virtualenvs\cut\scripts\activate
+playenv=%UserProfile%\virtualenvs\play\scripts\activate
+pzenv=%UserProfile%\virtualenvs\pzdev\scripts\activate
 gr=.\gradlew $*
 ll=ls -l $*
 clear=cls
