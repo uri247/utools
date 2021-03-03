@@ -35,10 +35,6 @@ rem
     doskey /macrofile=c:\usr\utools\aliases
 
 
-:root
-    cd /d c:\
-
-
 :echo
     title Uri's Shell
     echo Welcome to Uri's Shell
