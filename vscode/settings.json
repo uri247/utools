@@ -1,0 +1,16 @@
+{
+    "window.zoomLevel": 0,
+    "git.autofetch": true,
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "workbench.editor.restoreViewState": false,
+    "window.restoreWindows": "none",
+    "workbench.startupEditor": "none",
+    "explorer.openEditors.visible": 0
+}
