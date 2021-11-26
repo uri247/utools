@@ -65,7 +65,7 @@ bash=c:\usr\cygwin64\bin\bash.exe --login -i
 wd="c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\WinDiff.Exe" $*
 bc     ="%ProgramFiles(x86)%\Beyond Compare 3\BCompare.exe" $*
 chrm    ="%ProgramFiles%\Google\Chrome\Application\chrome.exe" $*
-uchrm   ="%ProgramFiles%\Google\Chrome\Application\chrome.exe" --user-data-dir=C:\Users\uri\chrm
+uchrm   ="%ProgramFiles%\Google\Chrome\Application\chrome.exe" --user-data-dir=C:\Users\uri\uchrm
 
 
 ie   ="%ProgramFiles%\Internet Explorer\iexplore.exe" $*
