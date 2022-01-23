@@ -14,6 +14,8 @@ Set-Alias -Name xl -Value "$env:ProgramFiles\Microsoft Office\root\Office16\EXCE
 Set-Alias -Name pp -Value "$env:ProgramFiles\Microsoft Office\root\Office16\POWERPNT.EXE"
 Set-Alias -Name ol -Value "$env:ProgramFiles\Microsoft Office\root\Office16\OUTLOOK.EXE"
 
+Set-Alias -Name cutenv -Value "$env:USERPROFILE/virtualenvs/cut/Scripts/activate.ps1"
+
 
 function make-link ($target, $link) {
     New-Item -Path $link -ItemType SymbolicLink -Value $target
@@ -24,6 +26,6 @@ function chrm  {
 }
 
 function uchrm { 
-    Start-Process -NoNewWindow "$env:ProgramFiles\Google\Chrome\Application\chrome.exe" -ArgumentList "--user-data-dir=C:\Users\uri\uchrm"
+    Start-Process -NoNewWindow "$env:ProgramFiles\Google\Chrome\Application\chrome.exe" -ArgumentList "--user-data-dir=C:\Users\uri\.uchrm\"
 }
 

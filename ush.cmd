@@ -8,10 +8,6 @@ rem
 :set_uri
     if "%URI_HOME%"=="" set URI_HOME=c:\uri
 
-:set_programfiles_on_x86
-    if "%ProgramFiles(x86)%"=="" set ProgramFiles(x86)=%ProgramFiles%
-
-
 :set_archname
     if "%PROCESSOR_ARCHITECTURE%"=="AMD64" set archname=x64
     if "%PROCESSOR_ARCHITECTURE%"=="x86" set archname=x86
@@ -26,14 +22,17 @@ rem
 
 :no_java
 
+:aliases
+    doskey /macrofile="%~dp0aliases"
+
+:python
+    if not exist %USERPROFILE%\virtualenvs\cut echo WARNING: Missing cut venv && goto no_cutenv
+    call %USERPROFILE%\virtualenvs\cut\Scripts\activate
+
+:no_cutenv
 
 :dbox
     for /f "delims=" %%x in ('python %~dp0GetDboxFldr.py') do set _ush_dboxfldr=%%x
-
-
-:aliases
-    doskey /macrofile=c:\usr\utools\aliases
-
 
 :echo
     title Uri's Shell
