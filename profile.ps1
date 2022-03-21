@@ -15,6 +15,8 @@ Set-Alias -Name pp -Value "$env:ProgramFiles\Microsoft Office\root\Office16\POWE
 Set-Alias -Name ol -Value "$env:ProgramFiles\Microsoft Office\root\Office16\OUTLOOK.EXE"
 
 Set-Alias -Name cutenv -Value "$env:USERPROFILE/virtualenvs/cut/Scripts/activate.ps1"
+Set-Alias -Name wbg64 -Value "C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\windbg.exe"
+Set-Alias -Name wbg32 -Value "C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\windbg.exe"
 
 
 function make-link ($target, $link) {
@@ -29,3 +31,6 @@ function uchrm {
     Start-Process -NoNewWindow "$env:ProgramFiles\Google\Chrome\Application\chrome.exe" -ArgumentList "--user-data-dir=C:\Users\uri\.uchrm\"
 }
 
+function ff ($pattern) {
+    Get-ChildItem -Name -Recurse -Filter $pattern
+}
