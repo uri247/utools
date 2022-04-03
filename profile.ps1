@@ -19,6 +19,10 @@ Set-Alias -Name wbg64 -Value "C:\Program Files (x86)\Windows Kits\10\Debuggers\x
 Set-Alias -Name wbg32 -Value "C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\windbg.exe"
 
 
+function als () {
+    vim $PROFILE.CurrentUserAllHosts
+}
+
 function make-link ($target, $link) {
     New-Item -Path $link -ItemType SymbolicLink -Value $target
 }
@@ -32,5 +36,26 @@ function uchrm {
 }
 
 function ff ($pattern) {
-    Get-ChildItem -Name -Recurse -Filter $pattern
+    Get-ChildItem -Recurse -Filter $pattern | Select-Object FullName
 }
+
+function k2svc ($cmd) {
+    switch ($cmd) {
+        "status" { Get-Service CatoNetworksVPNService }
+        "start" { Start-Service CatoNetworksVPNService }
+        "stop" { Stop-Service CatoNetworksVPNService }
+    }
+}
+
+function kdten {
+    Start-Process -FilePath "C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\windbg.exe" -ArgumentList "-k com:pipe,port=\\.\pipe\kd1,resets=0,reconnect"
+}
+    
+
+function k2         { Set-Location $env:USERPROFILE\k2 }
+function wincli     { Set-Location $env:USERPROFILE\k2\windowsclient }
+function adata      { Set-Location $env:APPDATA }
+function ldata      { Set-Location $env:LOCALAPPDATA }
+
+
+
