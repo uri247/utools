@@ -4,6 +4,12 @@
 "     C:\> cd %UserProfile%
 "     C:\Users\uri> mklink _vimrc c:\usr\utools\vim\_vimrc
 "     symbolic link created for _vimrc <<===>> c:\usr\utools\vim\_vimrc
+"
+" Or, on Powershell:
+"
+"     PS> cd ~
+"     PS> New-Item -ItemType SymbolicLink -Path _vimrc -Target C:\usr\utools\vim\_vimrc
+"
 
 set nobackup
 
