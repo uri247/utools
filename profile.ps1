@@ -2,7 +2,7 @@
 #
 # Use this file by creating a symbolic link from where PowerShell is looking for it, to this file:
 #
-# New-Item -Type SymbolicLink -Path $PROFILE.CurrentUserAllHosts -Value C:\usr\utools\profile.ps1
+# New-Item -Type SymbolicLink -Path $PROFILE.CurrentUserAllHosts -Value $HOME\utools\profile.ps1
 
 
 Set-Alias -Name tl -Value tasklist

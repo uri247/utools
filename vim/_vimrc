@@ -8,7 +8,7 @@
 " Or, on Powershell:
 "
 "     PS> cd ~
-"     PS> New-Item -ItemType SymbolicLink -Path _vimrc -Target C:\usr\utools\vim\_vimrc
+"     PS> New-Item -ItemType SymbolicLink -Path _vimrc -Target C:\Users\uri\utools\vim\_vimrc
 "
 
 set nobackup
