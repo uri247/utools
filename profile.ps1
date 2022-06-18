@@ -51,6 +51,10 @@ function kdten {
     Start-Process -FilePath "C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\windbg.exe" -ArgumentList "-k com:pipe,port=\\.\pipe\kd1,resets=0,reconnect"
 }
     
+function k2key {
+    $env:GIT_SSH_COMMAND="ssh -i C:/Users/uri/Dropbox/CatoStuff/KeyStore/uri.london@katonetworks.com/id_rsa"
+    Write-Output "GIT_SSH_COMMAND set to: '$env:GIT_SSH_COMMAND'"
+}
 
 function k2         { Set-Location $env:USERPROFILE\k2 }
 function wincli     { Set-Location $env:USERPROFILE\k2\windowsclient }
