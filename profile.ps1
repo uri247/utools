@@ -17,7 +17,10 @@ Set-Alias -Name ol -Value "$env:ProgramFiles\Microsoft Office\root\Office16\OUTL
 Set-Alias -Name cutenv -Value "$env:USERPROFILE/virtualenvs/cut/Scripts/activate.ps1"
 Set-Alias -Name wbg64 -Value "C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\windbg.exe"
 Set-Alias -Name wbg32 -Value "C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\windbg.exe"
+Set-Alias -Name pc -Value "C:\ThirdParty\Protobuf\v3.6.1\vs2019\x64\debug\bin\protoc.exe"
 
+Set-Alias -Option AllScope -Name cd -Value "Push-Location"
+Set-Alias -Option AllScope -Name e -Value "Pop-Location"
 
 function als () {
     vim $PROFILE.CurrentUserAllHosts
@@ -51,9 +54,15 @@ function kdten {
     Start-Process -FilePath "C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\windbg.exe" -ArgumentList "-k com:pipe,port=\\.\pipe\kd1,resets=0,reconnect"
 }
     
+function bash {
+    & c:\usr\cygwin64\bin\bash.exe --login
+}
 
-function k2         { Set-Location $env:USERPROFILE\k2 }
-function wincli     { Set-Location $env:USERPROFILE\k2\windowsclient }
+function k2gui {
+    & C:\users\UriLondon\k2\windowsclient\Product\Debug\CatoClient.exe
+}
+
+function wincli     { Set-Location $env:USERPROFILE\ws\wincli\windowsclient }
 function adata      { Set-Location $env:APPDATA }
 function ldata      { Set-Location $env:LOCALAPPDATA }
 
