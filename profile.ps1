@@ -2,7 +2,7 @@
 #
 # Use this file by creating a symbolic link from where PowerShell is looking for it, to this file:
 #
-# New-Item -Type SymbolicLink -Path $PROFILE.CurrentUserAllHosts -Value C:\usr\utools\profile.ps1
+# New-Item -Type SymbolicLink -Path $PROFILE.CurrentUserAllHosts -Value $HOME\utools\profile.ps1
 
 
 Set-Alias -Name tl -Value tasklist
@@ -55,16 +55,18 @@ function kdten {
 }
     
 function bash {
-    & c:\usr\cygwin64\bin\bash.exe --login
+    c:\usr\cygwin64\bin\bash.exe --login
+}
+
+function k2key {
+    $env:GIT_SSH_COMMAND="ssh -i C:/Users/uri/Dropbox/CatoStuff/KeyStore/uri.london@katonetworks.com/id_rsa"
+    Write-Output "GIT_SSH_COMMAND set to: '$env:GIT_SSH_COMMAND'"
 }
 
 function k2gui {
-    & C:\users\UriLondon\k2\windowsclient\Product\Debug\CatoClient.exe
+    C:\users\UriLondon\ws\wincli\windowsclient\Product\Debug\CatoClient.exe
 }
 
 function wincli     { Set-Location $env:USERPROFILE\ws\wincli\windowsclient }
 function adata      { Set-Location $env:APPDATA }
 function ldata      { Set-Location $env:LOCALAPPDATA }
-
-
-

@@ -1,5 +1,5 @@
 
-als  =%EDITOR% c:\usr\utools\aliases && doskey /macrofile=c:\usr\utools\aliases
+als  =%EDITOR% %USERPROFILE%\utools\aliases && doskey /macrofile=%USERPROFILE%\utools\aliases
 showals=doskey /macros | findstr "^$1="
 vihosts=%EDITOR% C:\Windows\System32\drivers\etc\hosts
 
@@ -22,8 +22,6 @@ splitpath=path | perl -ne "{print join qq(\n), split ';'}"
 dellog=del %APPDATA%\WatchDox\*.log && del %APPDATA%\WatchDox\*.ldecoded
 dlog=c:\watchdox\trunk\WindowsPlugin\Debug\Log.Decoder.exe $* -s
 dellog=del %APPDATA%\WatchDox\*.log && del %APPDATA%\WatchDox\*.ldecoded
-iconv=c:\usr\MinGW\bin\iconv.exe $*
-uni2utf=c:\usr\MinGW\bin\iconv.exe -f unicodelittle -t utf-8 $*
 npp=%ProgramFiles(x86)%\Notepad++\notepad++.exe $*
 neo="%ProgramFiles(x86)%\HHD Software\Hex Editor Neo\HexFrame.exe" $*
 bc="C:\Program Files (x86)\Beyond Compare 3\BCompare.exe" $*
@@ -61,11 +59,13 @@ sshix=ssh -i c:\Dropbox\IXDen\ix-den\KeyStore\ssh\ubuntu@aws.amazon.com\id_rsa $
 devsh="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\VsDevCmd.bat"
 
 bash=c:\usr\cygwin64\bin\bash.exe --login -i
+iconv=c:\usr\MinGW\bin\iconv.exe $*
+uni2utf=c:\usr\MinGW\bin\iconv.exe -f unicodelittle -t utf-8 $*
 
 wd="c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\WinDiff.Exe" $*
 bc     ="%ProgramFiles(x86)%\Beyond Compare 3\BCompare.exe" $*
 chrm    ="%ProgramFiles%\Google\Chrome\Application\chrome.exe" $*
-uchrm   ="%ProgramFiles%\Google\Chrome\Application\chrome.exe" --user-data-dir=C:\Users\uri\uchrm
+uchrm   ="%ProgramFiles%\Google\Chrome\Application\chrome.exe" --user-data-dir=%USERPROFILE%\uchrm
 
 
 ie   ="%ProgramFiles%\Internet Explorer\iexplore.exe" $*
