@@ -22,6 +22,14 @@ Set-Alias -Name pc -Value "C:\ThirdParty\Protobuf\v3.6.1\vs2019\x64\debug\bin\pr
 Set-Alias -Option AllScope -Name cd -Value "Push-Location"
 Set-Alias -Option AllScope -Name e -Value "Pop-Location"
 
+
+function ws         { Set-Location $env:USERPROFILE\ws }
+function wincli     { Set-Location $env:USERPROFILE\ws\wincli\windowsclient }
+function adata      { Set-Location $env:APPDATA }
+function ldata      { Set-Location $env:LOCALAPPDATA }
+function utoo       { SEt-Location $HOME/utools }
+
+
 function als () {
     vim $PROFILE.CurrentUserAllHosts
 }
@@ -71,6 +79,6 @@ function k2gui {
     C:\users\UriLondon\ws\wincli\windowsclient\Product\Debug\CatoClient.exe
 }
 
-function wincli     { Set-Location $env:USERPROFILE\ws\wincli\windowsclient }
-function adata      { Set-Location $env:APPDATA }
-function ldata      { Set-Location $env:LOCALAPPDATA }
+function glog {
+    & git log -20 --pretty=oneline --abbreb-commit
+}
