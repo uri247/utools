@@ -56,6 +56,11 @@ function k2key {
     Write-Output "GIT_SSH_COMMAND set to: '$env:GIT_SSH_COMMAND'"
 }
 
+function ttvfix {
+    & C:\Users\uri\virtualenvs\cut\Scripts\python.exe C:\Users\uri\deep-cut\PyGames\ttvfix.py
+}
+    
+
 function k2         { Set-Location $env:USERPROFILE\k2 }
 function wincli     { Set-Location $env:USERPROFILE\k2\windowsclient }
 function adata      { Set-Location $env:APPDATA }
