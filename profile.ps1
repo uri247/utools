@@ -23,6 +23,14 @@ Set-Alias -Name lex -Value "C:\Users\UriLondon\bin\LogExpert.1.9.0\LogExpert.exe
 Set-Alias -Option AllScope -Name cd -Value "Push-Location"
 Set-Alias -Option AllScope -Name e -Value "Pop-Location"
 
+
+function ws         { Set-Location $env:USERPROFILE\ws }
+function wincli     { Set-Location $env:USERPROFILE\ws\wincli\windowsclient }
+function adata      { Set-Location $env:APPDATA }
+function ldata      { Set-Location $env:LOCALAPPDATA }
+function utoo       { SEt-Location $HOME/utools }
+
+
 function als () {
     vim $PROFILE.CurrentUserAllHosts
 }
@@ -64,10 +72,14 @@ function k2key {
     Write-Output "GIT_SSH_COMMAND set to: '$env:GIT_SSH_COMMAND'"
 }
 
+function ttvfix {
+    & C:\Users\uri\virtualenvs\cut\Scripts\python.exe C:\Users\uri\deep-cut\PyGames\ttvfix.py
+}
+    
 function k2gui {
     C:\users\UriLondon\ws\wincli\windowsclient\Product\Debug\CatoClient.exe
 }
 
-function wincli     { Set-Location $env:USERPROFILE\ws\wincli\windowsclient }
-function adata      { Set-Location $env:APPDATA }
-function ldata      { Set-Location $env:LOCALAPPDATA }
+function glog {
+    & git log -20 --pretty=oneline --abbreb-commit
+}
