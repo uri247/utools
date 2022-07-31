@@ -81,5 +81,5 @@ function k2gui {
 }
 
 function glog {
-    & git log -20 --pretty=oneline --abbreb-commit
+    & git log -20 --pretty=oneline --abbrev-commit
 }
