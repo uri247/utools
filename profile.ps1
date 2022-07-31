@@ -18,6 +18,7 @@ Set-Alias -Name cutenv -Value "$env:USERPROFILE/virtualenvs/cut/Scripts/activate
 Set-Alias -Name wbg64 -Value "C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\windbg.exe"
 Set-Alias -Name wbg32 -Value "C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\windbg.exe"
 Set-Alias -Name pc -Value "C:\ThirdParty\Protobuf\v3.6.1\vs2019\x64\debug\bin\protoc.exe"
+Set-Alias -Name lex -Value "C:\Users\UriLondon\bin\LogExpert.1.9.0\LogExpert.exe"
 
 Set-Alias -Option AllScope -Name cd -Value "Push-Location"
 Set-Alias -Option AllScope -Name e -Value "Pop-Location"
