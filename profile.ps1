@@ -19,6 +19,7 @@ Set-Alias -Name wbg64 -Value "C:\Program Files (x86)\Windows Kits\10\Debuggers\x
 Set-Alias -Name wbg32 -Value "C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\windbg.exe"
 Set-Alias -Name pc -Value "C:\ThirdParty\Protobuf\v3.6.1\vs2019\x64\debug\bin\protoc.exe"
 Set-Alias -Name lex -Value "C:\Users\UriLondon\bin\LogExpert.1.9.0\LogExpert.exe"
+Set-Alias -Name ll -Value Get-ChildItem
 
 Set-Alias -Option AllScope -Name cd -Value "Push-Location"
 Set-Alias -Option AllScope -Name e -Value "Pop-Location"
@@ -35,6 +36,18 @@ function als () {
     vim $PROFILE.CurrentUserAllHosts
 }
 
+function refresh-env {
+    . $PROFILE.CurrentUserAllHosts
+}
+
+function srv-env {
+    . $HOME/ws/srv/server-team-env-setup/srv-env.ps1
+}
+
+function cli-env {
+    . $HOME/ws/wincli/windowsclient/tools/scripts/ps-lib.ps1
+}
+
 function make-link ($target, $link) {
     New-Item -Path $link -ItemType SymbolicLink -Value $target
 }
@@ -48,7 +61,7 @@ function uchrm {
 }
 
 function ff ($pattern) {
-    Get-ChildItem -Recurse -Filter $pattern | Select-Object FullName
+    Get-ChildItem -Recurse -ErrorAction Continue -Filter $pattern | select FullName
 }
 
 function k2svc ($cmd) {
@@ -81,5 +94,46 @@ function k2gui {
 }
 
 function glog {
-    & git log -20 --pretty=oneline --abbrev-commit
+    # & git log -20 --pretty=oneline --abbrev-commit
+    & git log -8 --pretty=oneline
+}
+
+function vihosts {
+    & vim "$env:SystemRoot\System32\drivers\etc\hosts"
+}
+
+function Get-TrustedHosts {
+    Get-Item WSMan:\localhost\Client\TrustedHosts
+}
+
+function Add-TrustedHosts ($host) {
+    Set-Item WSMan:\localhost\Client\TrustedHosts -Value $host -Concatenate
+}
+
+function save-barbafile {
+    Write-Host "Insert password for automation user: "
+    $ss = Read-Host -AsSecureString
+    $enc = ConvertFrom-SecureString -SecureString $ss
+    $enc | Set-Content auto-passwd.txt
+}
+
+function read-barbafile {
+    $enc = Get-Content .\auto-passwd.txt
+    $ss = $enc | ConvertTo-SecureString
+    $cred =  New-Object System.Managemwent.Automation.PSCredential -ArgumentList@('Administrator', $ss)
+    return $cred
+}
+    
+function Set-Python27 {
+    $p = $env:Path.Trim(';') -split ';' | Where-Object { $_ -notmatch 'python' }
+    $p += "C:/usr/Python27/Scripts"
+    $p += "C:/usr/Python27"
+    $env:Path = $p -join ';'
+}
+
+function sess-udc {
+    # $cred = Get-Credential -UserName Administrator
+    $cred = read-barbafile
+    $sess = New-PSSession -Credential $cred -ComputerName u-dc
+    return $sess
 }
