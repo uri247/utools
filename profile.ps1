@@ -4,7 +4,6 @@
 #
 # New-Item -Type SymbolicLink -Path $PROFILE.CurrentUserAllHosts -Value $HOME\utools\profile.ps1
 
-
 Set-Alias -Name tl -Value tasklist
 Set-Alias -Name tk -Value taskkill
 
@@ -29,7 +28,10 @@ function ws         { Set-Location $env:USERPROFILE\ws }
 function wincli     { Set-Location $env:USERPROFILE\ws\wincli\windowsclient }
 function adata      { Set-Location $env:APPDATA }
 function ldata      { Set-Location $env:LOCALAPPDATA }
-function utoo       { SEt-Location $HOME/utools }
+function utoo       { Set-Location $HOME/utools }
+function dbox       { Set-Location $HOME/dropbox }
+function bt         { Set-Location $HOME/dropbox/bt }
+function msh        { Set-Location $HOME/dropbox/Media.Share }
 
 
 function als () {
@@ -45,6 +47,12 @@ function srv-env {
 }
 
 function cli-env {
+    echo "Line: $($MyInvocation.Line)"
+    echo "Name: $($MyInvocation.InvocationName)"
+    if (($MyInvocation.Line) -and ($MyInvocation.InvocationName -ne '.')) {
+        Write-Error "ERROR: This script must invoked with 'dot sourcing'"
+        Break
+    }
     . $HOME/ws/wincli/windowsclient/tools/scripts/env.ps1
 }
 
@@ -137,3 +145,5 @@ function sess-udc {
     $sess = New-PSSession -Credential $cred -ComputerName u-dc
     return $sess
 }
+
+echo "Welcome to Uri Shell"
