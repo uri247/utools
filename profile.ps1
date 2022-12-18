@@ -30,6 +30,7 @@ function wincli     { Set-Location $env:USERPROFILE\ws\wincli\windowsclient }
 function adata      { Set-Location $env:APPDATA }
 function ldata      { Set-Location $env:LOCALAPPDATA }
 function utoo       { SEt-Location $HOME/utools }
+function cut        { SEt-Location $HOME/cut }
 
 
 function als () {
@@ -45,7 +46,7 @@ function srv-env {
 }
 
 function cli-env {
-    . $HOME/ws/wincli/windowsclient/tools/scripts/ps-lib.ps1
+    . $HOME/ws/wincli/windowsclient/tools/scripts/env.ps1
 }
 
 function make-link ($target, $link) {
@@ -76,6 +77,11 @@ function kdten {
     Start-Process -FilePath "C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\windbg.exe" -ArgumentList "-k com:pipe,port=\\.\pipe\kd1,resets=0,reconnect"
 }
     
+function jh {
+    cato_knock_windows
+    ssh uri.london@jh
+}
+
 function bash {
     c:\usr\cygwin64\bin\bash.exe --login
 }
@@ -137,3 +143,36 @@ function sess-udc {
     $sess = New-PSSession -Credential $cred -ComputerName u-dc
     return $sess
 }
+
+function setJava ([string]$java_home) {
+    $p = $env:Path.trim(';') -split ';' | Where-Object { $_ -notlike '*jdk-*' }
+    $env:JAVA_HOME = $java_home
+    $p += "$env:JAVA_HOME\bin"
+    $env:Path = $p -join ';'
+    java -version
+}
+
+function Set-Java8() {
+    setJava 'C:\Program Files\Eclipse Adoptium\jdk-8.0.345.1-hotspot'
+}
+
+function Set-Java11() {
+    setJava 'C:\Program Files\Eclipse Adoptium\jdk-11.0.16.8-hotspot'
+}
+
+function setPython ([string]$python_home) {
+    $p = $env:Path.trim(';') -split ';' | Where-Object { $_ -notlike '*Python*' }
+    $p += Join-Path "$python_home" Scripts
+    $p += "$python_home"
+    $env:Path = $p -join ';'
+    python --version
+}
+
+function Set-Python27 {
+    setPython 'C:\usr\Python27'
+}
+ 
+function Set-Python39 {
+    setPython 'C:\Program Files\Python39'
+}
+
