@@ -4,7 +4,6 @@
 #
 # New-Item -Type SymbolicLink -Path $PROFILE.CurrentUserAllHosts -Value $HOME\utools\profile.ps1
 
-
 Set-Alias -Name tl -Value tasklist
 Set-Alias -Name tk -Value taskkill
 
@@ -18,7 +17,7 @@ Set-Alias -Name cutenv -Value "$env:USERPROFILE/virtualenvs/cut/Scripts/activate
 Set-Alias -Name wbg64 -Value "C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\windbg.exe"
 Set-Alias -Name wbg32 -Value "C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\windbg.exe"
 Set-Alias -Name pc -Value "C:\ThirdParty\Protobuf\v3.6.1\vs2019\x64\debug\bin\protoc.exe"
-Set-Alias -Name lex -Value "C:\Users\UriLondon\bin\LogExpert.1.9.0\LogExpert.exe"
+Set-Alias -Name lex -Value "$HOME\bin\LogExpert.1.9.0\LogExpert.exe"
 Set-Alias -Name ll -Value Get-ChildItem
 
 Set-Alias -Option AllScope -Name cd -Value "Push-Location"
@@ -29,8 +28,11 @@ function ws         { Set-Location $env:USERPROFILE\ws }
 function wincli     { Set-Location $env:USERPROFILE\ws\wincli\windowsclient }
 function adata      { Set-Location $env:APPDATA }
 function ldata      { Set-Location $env:LOCALAPPDATA }
-function utoo       { SEt-Location $HOME/utools }
 function cut        { SEt-Location $HOME/cut }
+function utoo       { Set-Location $HOME/utools }
+function dbox       { Set-Location $HOME/dropbox }
+function bt         { Set-Location $HOME/dropbox/bt }
+function msh        { Set-Location $HOME/dropbox/Media.Share }
 
 
 function als () {
@@ -46,6 +48,12 @@ function srv-env {
 }
 
 function cli-env {
+    echo "Line: $($MyInvocation.Line)"
+    echo "Name: $($MyInvocation.InvocationName)"
+    if (($MyInvocation.Line) -and ($MyInvocation.InvocationName -ne '.')) {
+        Write-Error "ERROR: This script must invoked with 'dot sourcing'"
+        Break
+    }
     . $HOME/ws/wincli/windowsclient/tools/scripts/env.ps1
 }
 
@@ -175,4 +183,6 @@ function Set-Python27 {
 function Set-Python39 {
     setPython 'C:\Program Files\Python39'
 }
+
+echo "Welcome to Uri Shell"
 
