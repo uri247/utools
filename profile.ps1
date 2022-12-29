@@ -184,5 +184,16 @@ function Set-Python39 {
     setPython 'C:\Program Files\Python39'
 }
 
+function Enter-Dev {
+    $v = Get-VSSetupInstance | Select-VSSetupInstance -Latest
+    Import-Module "$($v.InstallationPath)/Common7/Tools/Microsoft.VisualStudio.DevShell.dll"
+    Enter-VsDevShell -InstanceId $v.InstanceId -SkipAutomaticLocation
+
+    New-Item -Path Function:\global:prompt -Force -Value {
+        "(vs) [] $($executionContext.SessionState.Path.CurrentLocation)$('>' * ($nestedPromptLevel + 1)) "
+    }.GetNewClosure() | Out-Null
+}
+
+
 echo "Welcome to Uri Shell"
 
