@@ -152,20 +152,42 @@ function sess-udc {
     return $sess
 }
 
-function setJava ([string]$java_home) {
+function Set-Java(
+    [parameter(Mandatory)]
+    [ValidateNotNullOrEmpty()]
+    [ValidateSet('8', '11', '17')]
+    [string]$javaVer)
+{
+    if ($javaVer -eq '8') {
+        $javaHome = "C:\Program Files\Eclipse Adoptium\jdk-8.0.345.1-hotspot"
+        $javaOpts = $null
+    }
+    elseif ($javaVer -eq '11') {
+        $javaHome = "C:\Program Files\Eclipse Adoptium\jdk-11.0.16.8-hotspot"
+        $javaOpts = $null
+    }
+    else {
+        $javaHome = "C:\Program Files\Eclipse Adoptium\jdk-17.0.7.7-hotspot"
+        $javaOpts = 
+            '--add-exports=java.base/sun.nio.ch=ALL-UNNAMED',
+            '--add-opens=java.base/java.lang=ALL-UNNAMED',
+            '--add-opens=java.base/java.lang.reflect=ALL-UNNAMED',
+            '--add-opens=java.base/java.io=ALL-UNNAMED',
+            '--add-exports=jdk.unsupported/sun.misc=ALL-UNNAMED',
+            '--add-opens=java.base/sun.net.util=ALL-UNNAMED',
+            '--add-opens=java.base/java.util=ALL-UNNAMED'
+    }
+
+    $env:JAVA_HOME = $javaHome
+    $env:JAVA_OPTS = $javaOpts -join ' '
+
     $p = $env:Path.trim(';') -split ';' | Where-Object { $_ -notlike '*jdk-*' }
-    $env:JAVA_HOME = $java_home
     $p += "$env:JAVA_HOME\bin"
     $env:Path = $p -join ';'
+
+    echo "JAVA_HOME: $env:JAVA_HOME"
+    echo "JAVA_OPTS: $env:JAVA_OPTS"
     java -version
-}
-
-function Set-Java8() {
-    setJava 'C:\Program Files\Eclipse Adoptium\jdk-8.0.345.1-hotspot'
-}
-
-function Set-Java11() {
-    setJava 'C:\Program Files\Eclipse Adoptium\jdk-11.0.16.8-hotspot'
 }
 
 function setPython ([string]$python_home) {
@@ -194,6 +216,15 @@ function Enter-Dev {
     }.GetNewClosure() | Out-Null
 }
 
+function Cato-Ju {
+    if (Test-Path -PathType Container -Path "$HOME/Dropbox/Stuff/Ju") {
+        Set-Location "$HOME/Dropbox/Stuff/Ju"
+    }
+    elseif (Test-Path -PathType Container -Path "$HOME/Dropbox/CatoStuff/Ju") {
+        Set-Location "$HOME/Dropbox/CatoStuff/Ju"
+    }
+    & "$HOME/virtualenvs/cut/Scripts/jupyter.exe" lab
+}
+
 
 echo "Welcome to Uri Shell"
-
