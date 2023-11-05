@@ -14,6 +14,7 @@ Set-Alias -Name pp -Value "$env:ProgramFiles\Microsoft Office\root\Office16\POWE
 Set-Alias -Name ol -Value "$env:ProgramFiles\Microsoft Office\root\Office16\OUTLOOK.EXE"
 
 Set-Alias -Name cutenv -Value "$env:USERPROFILE/virtualenvs/cut/Scripts/activate.ps1"
+Set-Alias -Name catoenv -Value "$env:USERPROFILE/virtualenvs/cato/Scripts/activate.ps1"
 Set-Alias -Name wbg64 -Value "C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\windbg.exe"
 Set-Alias -Name wbg32 -Value "C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\windbg.exe"
 Set-Alias -Name pc -Value "C:\ThirdParty\Protobuf\v3.6.1\vs2019\x64\debug\bin\protoc.exe"
@@ -33,6 +34,7 @@ function utoo       { Set-Location $HOME/utools }
 function dbox       { Set-Location $HOME/dropbox }
 function bt         { Set-Location $HOME/dropbox/bt }
 function msh        { Set-Location $HOME/dropbox/Media.Share }
+function demdemo    { Set-Location $HOME/cutting/demdemo }
 
 
 function als () {
@@ -226,5 +228,13 @@ function Cato-Ju {
     & "$HOME/virtualenvs/cut/Scripts/jupyter.exe" lab
 }
 
+function Enter-Auto {
+    $work_dir = $(Resolve-Path "$HOME/work").Path
+    $play_dir = $(Resolve-Path "$work_dir/play-1.7.1").Path
+    Set-Java 17
+    $env:Path = ($env:Path -split ';' | where { $_ -notmatch 'play-\d*\.\d*\.\d*' }) + $play_dir -join ';'
+    cd $work_dir
+}
+    
 
 echo "Welcome to Uri Shell"
