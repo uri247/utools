@@ -20,16 +20,18 @@ Set-Alias -Name wbg32 -Value "C:\Program Files (x86)\Windows Kits\10\Debuggers\x
 Set-Alias -Name pc -Value "C:\ThirdParty\Protobuf\v3.6.1\vs2019\x64\debug\bin\protoc.exe"
 Set-Alias -Name lex -Value "$HOME\bin\LogExpert.1.9.0\LogExpert.exe"
 Set-Alias -Name ll -Value Get-ChildItem
+Set-Alias -Name tf -Value "C:\usr\terraform-1.8.5\terraform.exe"
 
 Set-Alias -Option AllScope -Name cd -Value "Push-Location"
 Set-Alias -Option AllScope -Name e -Value "Pop-Location"
 
 
 function ws         { Set-Location $env:USERPROFILE\ws }
-function wincli     { Set-Location $env:USERPROFILE\ws\wincli\windowsclient }
+function ep         { Set-Location $env:USERPROFILE\ws\endpoint }
+function wincli     { Set-Location $env:USERPROFILE\ws\endpoint\sdp\win }
 function adata      { Set-Location $env:APPDATA }
 function ldata      { Set-Location $env:LOCALAPPDATA }
-function cut        { SEt-Location $HOME/cut }
+function cut        { Set-Location $HOME/cut }
 function utoo       { Set-Location $HOME/utools }
 function dbox       { Set-Location $HOME/dropbox }
 function bt         { Set-Location $HOME/dropbox/bt }
@@ -235,6 +237,32 @@ function Enter-Auto {
     $env:Path = ($env:Path -split ';' | where { $_ -notmatch 'play-\d*\.\d*\.\d*' }) + $play_dir -join ';'
     cd $work_dir
 }
+
+function Cleanup-Sdp {
+    if ($CATO_ENDPOINT_HOME -eq $null) {
+        echo "not in endpoint shell"
+        return;
+    }
+    Set-Location $CATO_ENDPOINT_HOME
+    Cleanup-Client
+    rm -ErrorAction Ignore -Recurse -Force `
+      .\sdp\win\ARM64\,
+      .\sdp\win\Debug\,
+      .\sdp\win\Installer\CustomActions\CatoInstallerCustomAction\x64\,
+      .\sdp\win\Product\,
+      .\sdp\win\Tools\DebugCustomActions\x64\,
+      .\sdp\win\Tools\DevicePostureValidation\LibWaAPIBase\x64\,
+      .\sdp\win\externals\,
+      .\sdp\win\projects\x64\,
+      .\sdp\win\proto-ipc\generated\,
+      .\sdp\win\x64\
+}
     
+function Find-Alias([string]$cmd)
+{
+    Get-Alias | ? Definition -like $cmd
+}
+
+
 
 echo "Welcome to Uri Shell"
