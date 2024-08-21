@@ -37,6 +37,8 @@ function dbox       { Set-Location $HOME/dropbox }
 function bt         { Set-Location $HOME/dropbox/bt }
 function msh        { Set-Location $HOME/dropbox/Media.Share }
 function demdemo    { Set-Location $HOME/cutting/demdemo }
+function catoprog   { Set-Location "${env:ProgramFiles(x86)}\Cato Networks\Cato Client" }
+function DbgDir     { Set-Location "$HOME/ws/endpoint/sdp/win/Product/Debug/x64" }
 
 
 function als () {
@@ -263,6 +265,19 @@ function Find-Alias([string]$cmd)
     Get-Alias | ? Definition -like $cmd
 }
 
+function Lex-LastProductionVpn {
+    catoprog
+    Lex-LastVpn
+}
 
+function Lex-LastVpn {
+    $f = (dir ".\cato_vpn_*.log" | sort Name)[-1]
+    echo "opening $f"
+    lex $f
+}
+
+function Get-MyPublicIP {
+    curl.exe -k https://ipecho.net/plain
+}
 
 echo "Welcome to Uri Shell"
