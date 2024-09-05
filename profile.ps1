@@ -14,11 +14,13 @@ Set-Alias -Name pp -Value "$env:ProgramFiles\Microsoft Office\root\Office16\POWE
 Set-Alias -Name ol -Value "$env:ProgramFiles\Microsoft Office\root\Office16\OUTLOOK.EXE"
 
 Set-Alias -Name cutenv -Value "$env:USERPROFILE/virtualenvs/cut/Scripts/activate.ps1"
+Set-Alias -Name catoenv -Value "$env:USERPROFILE/virtualenvs/cato/Scripts/activate.ps1"
 Set-Alias -Name wbg64 -Value "C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\windbg.exe"
 Set-Alias -Name wbg32 -Value "C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\windbg.exe"
 Set-Alias -Name pc -Value "C:\ThirdParty\Protobuf\v3.6.1\vs2019\x64\debug\bin\protoc.exe"
 Set-Alias -Name lex -Value "$HOME\bin\LogExpert.1.9.0\LogExpert.exe"
 Set-Alias -Name ll -Value Get-ChildItem
+Set-Alias -Name tf -Value "C:\usr\terraform-1.8.5\terraform.exe"
 
 Set-Alias -Option AllScope -Name cd -Value "Push-Location"
 Set-Alias -Option AllScope -Name e -Value "Pop-Location"
@@ -29,12 +31,14 @@ function ep         { Set-Location $env:USERPROFILE\ws\endpoint }
 function wincli     { ep; cd sdp/win }
 function adata      { Set-Location $env:APPDATA }
 function ldata      { Set-Location $env:LOCALAPPDATA }
-function cut        { SEt-Location $HOME/cut }
+function cut        { Set-Location $HOME/cut }
 function utoo       { Set-Location $HOME/utools }
 function dbox       { Set-Location $HOME/dropbox }
 function bt         { Set-Location $HOME/dropbox/bt }
 function msh        { Set-Location $HOME/dropbox/Media.Share }
 function demdemo    { Set-Location $HOME/cutting/demdemo }
+function catoprog   { Set-Location "${env:ProgramFiles(x86)}\Cato Networks\Cato Client" }
+function DbgDir     { Set-Location "$HOME/ws/endpoint/sdp/win/Product/Debug/x64" }
 
 
 function als () {
@@ -159,20 +163,42 @@ function sess-udc {
     return $sess
 }
 
-function setJava ([string]$java_home) {
+function Set-Java(
+    [parameter(Mandatory)]
+    [ValidateNotNullOrEmpty()]
+    [ValidateSet('8', '11', '17')]
+    [string]$javaVer)
+{
+    if ($javaVer -eq '8') {
+        $javaHome = "C:\Program Files\Eclipse Adoptium\jdk-8.0.345.1-hotspot"
+        $javaOpts = $null
+    }
+    elseif ($javaVer -eq '11') {
+        $javaHome = "C:\Program Files\Eclipse Adoptium\jdk-11.0.16.8-hotspot"
+        $javaOpts = $null
+    }
+    else {
+        $javaHome = "C:\Program Files\Eclipse Adoptium\jdk-17.0.7.7-hotspot"
+        $javaOpts = 
+            '--add-exports=java.base/sun.nio.ch=ALL-UNNAMED',
+            '--add-opens=java.base/java.lang=ALL-UNNAMED',
+            '--add-opens=java.base/java.lang.reflect=ALL-UNNAMED',
+            '--add-opens=java.base/java.io=ALL-UNNAMED',
+            '--add-exports=jdk.unsupported/sun.misc=ALL-UNNAMED',
+            '--add-opens=java.base/sun.net.util=ALL-UNNAMED',
+            '--add-opens=java.base/java.util=ALL-UNNAMED'
+    }
+
+    $env:JAVA_HOME = $javaHome
+    $env:JAVA_OPTS = $javaOpts -join ' '
+
     $p = $env:Path.trim(';') -split ';' | Where-Object { $_ -notlike '*jdk-*' }
-    $env:JAVA_HOME = $java_home
     $p += "$env:JAVA_HOME\bin"
     $env:Path = $p -join ';'
+
+    echo "JAVA_HOME: $env:JAVA_HOME"
+    echo "JAVA_OPTS: $env:JAVA_OPTS"
     java -version
-}
-
-function Set-Java8() {
-    setJava 'C:\Program Files\Eclipse Adoptium\jdk-8.0.345.1-hotspot'
-}
-
-function Set-Java11() {
-    setJava 'C:\Program Files\Eclipse Adoptium\jdk-11.0.16.8-hotspot'
 }
 
 function setPython ([string]$python_home) {
@@ -201,6 +227,62 @@ function Enter-Dev {
     }.GetNewClosure() | Out-Null
 }
 
+function Cato-Ju {
+    if (Test-Path -PathType Container -Path "$HOME/Dropbox/Stuff/Ju") {
+        Set-Location "$HOME/Dropbox/Stuff/Ju"
+    }
+    elseif (Test-Path -PathType Container -Path "$HOME/Dropbox/CatoStuff/Ju") {
+        Set-Location "$HOME/Dropbox/CatoStuff/Ju"
+    }
+    & "$HOME/virtualenvs/cut/Scripts/jupyter.exe" lab
+}
+
+function Enter-Auto {
+    $work_dir = $(Resolve-Path "$HOME/work").Path
+    $play_dir = $(Resolve-Path "$work_dir/play-1.7.1").Path
+    Set-Java 17
+    $env:Path = ($env:Path -split ';' | where { $_ -notmatch 'play-\d*\.\d*\.\d*' }) + $play_dir -join ';'
+    cd $work_dir
+}
+
+function Cleanup-Sdp {
+    if ($CATO_ENDPOINT_HOME -eq $null) {
+        echo "not in endpoint shell"
+        return;
+    }
+    Set-Location $CATO_ENDPOINT_HOME
+    Cleanup-Client
+    rm -ErrorAction Ignore -Recurse -Force `
+      .\sdp\win\ARM64\,
+      .\sdp\win\Debug\,
+      .\sdp\win\Installer\CustomActions\CatoInstallerCustomAction\x64\,
+      .\sdp\win\Product\,
+      .\sdp\win\Tools\DebugCustomActions\x64\,
+      .\sdp\win\Tools\DevicePostureValidation\LibWaAPIBase\x64\,
+      .\sdp\win\externals\,
+      .\sdp\win\projects\x64\,
+      .\sdp\win\proto-ipc\generated\,
+      .\sdp\win\x64\
+}
+    
+function Find-Alias([string]$cmd)
+{
+    Get-Alias | ? Definition -like $cmd
+}
+
+function Lex-LastProductionVpn {
+    catoprog
+    Lex-LastVpn
+}
+
+function Lex-LastVpn {
+    $f = (dir ".\cato_vpn_*.log" | sort Name)[-1]
+    echo "opening $f"
+    lex $f
+}
+
+function Get-MyPublicIP {
+    curl.exe -k https://ipecho.net/plain
+}
 
 echo "Welcome to Uri Shell"
-
