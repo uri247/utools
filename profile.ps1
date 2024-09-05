@@ -25,7 +25,8 @@ Set-Alias -Option AllScope -Name e -Value "Pop-Location"
 
 
 function ws         { Set-Location $env:USERPROFILE\ws }
-function wincli     { Set-Location $env:USERPROFILE\ws\wincli\windowsclient }
+function ep         { Set-Location $env:USERPROFILE\ws\endpoint }
+function wincli     { ep; cd sdp/win }
 function adata      { Set-Location $env:APPDATA }
 function ldata      { Set-Location $env:LOCALAPPDATA }
 function cut        { SEt-Location $HOME/cut }
@@ -33,6 +34,7 @@ function utoo       { Set-Location $HOME/utools }
 function dbox       { Set-Location $HOME/dropbox }
 function bt         { Set-Location $HOME/dropbox/bt }
 function msh        { Set-Location $HOME/dropbox/Media.Share }
+function demdemo    { Set-Location $HOME/cutting/demdemo }
 
 
 function als () {
@@ -94,9 +96,14 @@ function bash {
     c:\usr\cygwin64\bin\bash.exe --login
 }
 
-function k2key {
+function Set-CatoKeyForGit {
     $env:GIT_SSH_COMMAND="ssh -i C:/Users/uri/Dropbox/CatoStuff/KeyStore/uri.london@katonetworks.com/id_rsa"
     Write-Output "GIT_SSH_COMMAND set to: '$env:GIT_SSH_COMMAND'"
+}
+Set-Alias -Name k2key -Value Set-CatoKeyForGit
+
+function k2ssh {
+    & ssh -i C:/Users/uri/Dropbox/CatoStuff/KeyStore/uri.london@katonetworks.com/id_rsa $args
 }
 
 function ttvfix {
