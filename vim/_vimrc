@@ -11,6 +11,8 @@
 "     PS> New-Item -ItemType SymbolicLink -Path _vimrc -Target C:\Users\uri\utools\vim\_vimrc
 "
 
+set mouse=v
+
 set nobackup
 
 set shiftwidth=4

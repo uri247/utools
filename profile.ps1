@@ -212,6 +212,10 @@ function Set-Python39 {
     setPython 'C:\Program Files\Python39'
 }
 
+function IPythonCut {
+    & "$HOME/virtualenvs/cut/Scripts/ipython.exe"
+}
+
 function Enter-Dev {
     $v = Get-VSSetupInstance | Select-VSSetupInstance -Latest
     Import-Module "$($v.InstallationPath)/Common7/Tools/Microsoft.VisualStudio.DevShell.dll"
@@ -263,11 +267,6 @@ function Cleanup-Sdp {
 function Find-Alias([string]$cmd)
 {
     Get-Alias | ? Definition -like $cmd
-}
-
-function Lex-LastProductionVpn {
-    catoprog
-    Lex-LastVpn
 }
 
 function Lex-LastVpn {
