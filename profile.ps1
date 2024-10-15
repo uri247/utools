@@ -274,6 +274,11 @@ function Find-Alias([string]$cmd)
     Get-Alias | ? Definition -like $cmd
 }
 
+function Get-Parameters([string]$cmd)
+{
+    (gcm $cmd).Parameters.Values | select Name, Aliases
+}
+
 function Lex-LastVpn {
     $f = (dir ".\cato_vpn_*.log" | sort Name)[-1]
     echo "opening $f"
