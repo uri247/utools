@@ -72,7 +72,7 @@ function chrm  {
 }
 
 function uchrm { 
-    Start-Process -NoNewWindow "$env:ProgramFiles\Google\Chrome\Application\chrome.exe" -ArgumentList "--user-data-dir=C:\Users\uri\.uchrm\"
+    Start-Process -NoNewWindow "$env:ProgramFiles\Google\Chrome\Application\chrome.exe" -ArgumentList "--user-data-dir=$HOME\.uchrm"
 }
 
 function ff ($pattern) {
