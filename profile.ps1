@@ -268,7 +268,7 @@ function Cleanup-Sdp {
       .\sdp\win\proto-ipc\generated\,
       .\sdp\win\x64\
 }
-    
+
 function Find-Alias([string]$cmd)
 {
     Get-Alias | ? Definition -like $cmd
@@ -287,6 +287,11 @@ function Lex-LastVpn {
 
 function Get-MyPublicIP {
     curl.exe -k https://ipecho.net/plain
+}
+
+function Add-Path([string]$directory) {
+    $p = $($env:Path.Trim(';') -split ';') + $directory
+    $env:Path = $p -join ';'
 }
 
 echo "Welcome to Uri Shell"
