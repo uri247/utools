@@ -111,7 +111,7 @@ function k2ssh {
 }
 
 function ttvfix {
-    & C:\Users\uri\virtualenvs\cut\Scripts\python.exe C:\Users\uri\deep-cut\PyGames\ttvfix.py
+    & $HOME\virtualenvs\cut\Scripts\python.exe $HOME\deep-cut\PyGames\ttvfix.py
 }
     
 function k2gui {
